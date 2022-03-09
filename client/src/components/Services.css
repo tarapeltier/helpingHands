@@ -1,0 +1,75 @@
+.main {
+    display: flex;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.menu {
+    padding: 100px 20px 20px 20px;
+    width:25%;
+    border-right: solid #3e387a 2px;
+}
+
+.menu-head {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.menu-links {
+    font-size: smaller;
+    padding: 10%;
+    text-align: left;
+}
+
+.menu-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 20px;
+    color: #3e387a;
+}
+
+.content {
+    width: 80%;
+    background-color:#8ef3f7;
+}
+
+.header-img {
+    width: 100%;
+}
+
+.headline {
+    padding: 10%;
+    text-align: left;
+}
+
+.card-container {
+}
+
+.cards {
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 25px;
+    width: 30%;
+    padding: 2%;
+    margin: 2%;
+    height: 150px;
+    border: solid #3e387a 2px;
+    text-align: left;
+}
+
+.bullet {
+    font-size: smaller;
+    margin-bottom: 10%;
+}
+
+.icon {
+    margin-right: 10%;
+}
