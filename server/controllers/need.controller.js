@@ -20,19 +20,19 @@ module.exports.getAllNeeds = (request, response) => {
 }
 
 module.exports.getNeed = (request, response) => {
-    Pet.findOne({_id:request.params.id})
+    Need.findOne({_id:request.params.id})
         .then(need => response.json(need))
         .catch(err => response.json(err))
 }
 
 module.exports.updateNeed = (request, response) => {
-    Pet.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
+    Need.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})
         .then(updatedNeed => response.json(updatedNeed))
         .catch(err => response.json(err))
 }
 
 module.exports.deleteNeed = (request, response) => {
-    Pet.deleteOne({ _id: request.params.id }) 
+    Need.deleteOne({ _id: request.params.id }) 
         .then(deleteConfirmation => response.json(deleteConfirmation))
         .catch(err => response.json(err))
 }

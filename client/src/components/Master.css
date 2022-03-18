@@ -1,0 +1,354 @@
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    /* position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px; */
+}
+
+.menu {
+    padding: 100px 0px 0px 0px;
+    width:25%;
+    border-right: solid #3e387a 2px;
+}
+
+.menu-head {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.menu-links {
+    font-size: large;
+    padding: 10%;
+    text-align: left;
+}
+
+.menu-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 20px;
+    color: #3e387a;
+}
+
+.menu-link:hover{
+    color: #8ef3f7;
+}
+
+.content-local {
+    padding: 5%;
+    width: 80%;
+    background-image: url("http://localhost:3000/backgroundHH-1.png");
+    background-size: cover;
+}
+
+.content-donate {
+    width: 80%;
+    background-color:#8ef3f7;
+    background-image: url("http://localhost:3000/backgroundHH-1.png");
+    background-size: cover;
+    
+}
+
+.header-wrapper {
+    margin-top: 10%;
+}
+
+.column-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1%;
+}
+
+.card-body-wrap {
+    white-space: pre-wrap;
+}
+.in-kind {
+    margin: 5%;
+}
+
+.in-kind-table {
+    margin-top: 10%;;
+}
+.donate{
+    margin: 5%;
+}
+.header-img {
+    width: 100%;
+}
+
+.mission {
+    padding: 25%;
+    text-align: left;
+}
+
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.story {
+    flex: 1;
+}
+
+.board {
+    display: block;
+    flex: 1;
+}
+
+.contact {
+    flex: 1;
+    margin-top: 20%;
+}
+
+.contact-body {
+    margin: 0;
+    font-size: smaller;
+}
+
+.header-img {
+    width: 100%;
+}
+
+.headline-local {
+    padding: 10% 10% 0% 10%;
+    text-align: left;
+}
+
+.cards {
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+
+.card-local {
+    background-color: white;
+    border-radius: 25px;
+    width: 30%;
+    padding: 2%;
+    margin: 2%;
+    height: 150px;
+    border: solid #3e387a 2px;
+    text-align: left;
+}
+
+.bullet {
+    font-size: smaller;
+    margin-bottom: 10%;
+}
+
+.icon {
+    width: 50%;
+}
+
+.delete {
+    color: red;
+}
+
+.story-body {
+    margin-top: 10%;
+}
+
+.card-inline {
+    margin: 2%;
+}
+
+.flex-container {
+    display: flex;
+}
+
+tr:nth-child(even) {
+    background-color: #7563a999;
+}
+
+tr:nth-child(odd) {
+    background-color: #746cae80;
+}
+
+.stripe-container {
+    margin: auto;
+    padding: 3%;
+    align-items: center;
+    background-color: #8ef3f7;
+}
+
+.payment-button {
+    margin-top: 10% !important;
+}
+
+.btn-outline-primary {
+    margin: 5px !important;
+    border-color: #3e387a !important;
+    color: #3e387a !important ;
+}
+
+.btn-outline-primary:hover {
+    background-color: #3e387a !important;
+    color: white !important;
+}
+
+.card-deck {
+    display: flex;
+    justify-content: space-around;
+}
+.board-card {
+    align-items: center;
+    width: 20%;
+    font-size: x-small;
+    background-color: rgba(255,255,255,0.5) !important;
+}
+
+.board-image {
+    margin-top: 10%;
+    max-width: 40%;
+}
+
+.card-wrapper {
+    padding: 5%;
+    text-align: left;
+    margin-bottom: 10%;
+}
+
+.card-header {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+.local-card {
+    margin: 1%;
+    background-color: rgba(255, 255, 255, 0.212) !important;
+}
+
+.head-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+
+.smaller {
+    font-size: smaller;
+}
+
+.donate-price {
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: smaller;
+    text-align: left;
+}
+
+.price {
+    margin: 1%;
+}
+
+.story-card {
+    width: 40%;
+    display: inline-block;
+}
+
+.card-columns {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    width: auto;
+}
+.my-masonry-grid_column {
+    padding-left: 30px; /* gutter size */
+    background-clip: padding-box;
+}
+
+  /* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+    background: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+.my-card {
+    border-radius:0% 0%  2% 2% !important;
+    border: #3e387a solid 1px !important;
+}
+
+.card-img-top {
+    border-radius:0% 0%  0% 0% !important;
+}
+
+.card-title {
+    margin: auto;
+}
+
+.flip-card {
+    background-color: transparent !important;
+    height: 300px !important;
+    min-width: 250px;
+    max-width: 350px;
+    perspective: 500px !important; /* 3D effect */
+}
+
+  /* This container is needed to position the front and back side */
+.flip-inner {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center !important;
+    transition: transform 0.8s !important;
+    transform-style: preserve-3d !important;
+}
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg) !important;
+}
+
+  /* Position the front and back side */
+.flip-front, .flip-back {
+    align-items: center;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-backface-visibility: hidden !important; /* Safari */
+    backface-visibility: hidden !important;
+}
+
+  /* Style the front side (fallback if image is missing) */
+.flip-front {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    color: #3e387a !important;
+    padding: 10%;
+    margin: auto;
+    text-align: center;
+}
+
+  /* Style the back side */
+.flip-back {
+    text-align: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    transform: rotateY(180deg) !important;
+}
+
+.don-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.inp-wrap {
+    justify-content: space-around;
+}
+
+.don-input {
+    display: block;
+}
+
+.payment-button {
+    height: 20% !important;
+}

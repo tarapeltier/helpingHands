@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link, navigate} from '@reach/router';
-import { FaUserGraduate, FaHandshake, FaHome, FaShoppingCart, FaBaby, FaGavel } from "react-icons/fa";
-import './Services.css';
+import { FaUserGraduate, FaClinicMedical, FaGifts, FaExpandAlt, FaHome, FaShoppingCart, FaBaby, FaGavel } from "react-icons/fa";
+import Masonry from 'react-masonry-css';
+import './Master.css';
 
-const HomePage = (props) => {
-    
+const Services = (props) => {
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    console.log(props)
+    if (isAdmin === false && props.location.state.admin){
+        setIsAdmin(true);
+        console.log('admin is true')
+        }
+    else if (isAdmin === true) {
+        console.log('admin is true')
+    }
+    else {
+        console.log('admin is false')
+    }
+
     const directHome = () =>{
-            navigate('/home')
+        navigate('/home', {state:{admin: isAdmin}})
         }
 
     return (
@@ -17,66 +31,119 @@ const HomePage = (props) => {
                         <img className='header-img' src='header.png' alt='logo' onClick={()=>directHome()} ></img>
                     </div>
                     <div className='menu-links'>
-                        <Link className='menu-link' to={"/about"}> Who we are </Link>
-                        <Link className='menu-link' to={"/stories"}> Who we help </Link>
-                        <Link className='menu-link' to={"/services"}> What we do </Link>
-                        <Link className='menu-link' to={"/help"}> How you can help </Link>
+                        <ul>
+                            <li>
+                                <Link className='menu-link' to="/about" state={{admin: isAdmin}}> Who we are </Link>
+                            </li>
+                            <li>
+                                <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Who we help </Link>
+                            </li>
+                            <li>
+                                <Link className='menu-link' to="/services" state={{admin: isAdmin}}> What we do </Link>
+                            </li>
+                            <li>
+                                <Link className='menu-link' to="/help" state={{admin: isAdmin}}> How you can help </Link>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div className='content'>
-                    <div className='headline'>
+                <div className='content-local'>
+                    
+                    <div className='headline-local'>
                         <p>We work one-on-one with young adults ageing out of foster care
                             to support their individual needs. Some available services include:
                         </p>
                     </div>
-                    <div className='card-container'>
-                        <div className='cards'>
-                            <div className='card'><FaUserGraduate className='icon'/>Education
-                                <ul>
-                                    <li className='bullet'>Application assistance</li>
-                                    <li className='bullet'>Tutoring</li>
-                                    <li className='bullet'>Fighting bullies</li>
-                                </ul>
-                            </div>
-                            <div className='card'><FaHandshake className='icon'/>Employment
-                                <ul>
-                                    <li className='bullet'>Resume prep</li>
-                                    <li className='bullet'>Transportation to interviews</li>
-                                    <li className='bullet'>Equipment</li>
-                                </ul>
-                            </div>
-                            <div className='card'><FaHome className='icon'/>Housing
-                                <ul>
-                                    <li className='bullet'>Transportation</li>
-                                    <li className='bullet'>Application assistance</li>
-                                    <li className='bullet'>Fighting realtors</li>
-                                </ul>
+                    
+                    <div className='card-wrapper'>
+                    <Masonry
+                        breakpointCols={{default: 4,
+                                        1800: 3,
+                                        1300: 2,
+                                        800: 1}}
+                        className="my-masonry-grid"
+                        columnClassName="my-masonry-grid_column">
+                        
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaUserGraduate className='icon' size='m'/>
+                                    <h3 className='card-body'>Education</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller'>Volunteers meet with youth to help them learn how to complete financial aid applications, apply to college, register for classes, and discuss majors.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className='cards'>
-                            <div className='card'><FaShoppingCart className='icon'/>Essential Items
-                            <ul>
-                                    <li className='bullet'>Food</li>
-                                    <li className='bullet'>Clothing</li>
-                                    <li className='bullet'>Toiletries</li>
-                                </ul>
-                            </div>
-                            <div className='card'><FaBaby className='icon'/>Parenting
-                            <ul>
-                                    <li className='bullet'>Diapers</li>
-                                    <li className='bullet'>Toys</li>
-                                    <li className='bullet'>Baby food</li>
-                                </ul>
-                            </div>
-                            <div className='card'><FaGavel className='icon'/>Incarceration
-                            <ul>
-                                    <li className='bullet'>Commisary</li>
-                                    <li className='bullet'>Planning</li>
-                                    <li className='bullet'>Fighting gangs</li>
-                                </ul>
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaHome className='icon' size='m'/>
+                                    <h3 className='card-body'>Housing</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller'>Volunteers and community members help youth find and furnish long term housing. When necessary, we provide security deposits and first month’s rent.</p>
+                                </div>
                             </div>
                         </div>
-
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaClinicMedical className='icon' size='m'/>
+                                    <h3 className='card-body'>Medical Aids</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller'>Youth who have been in foster care often have medical needs that were not met when they were younger. Even though they might have Medicaid, it will not cover orthodontics or braces after they are 19. We work with social workers to ensure youth get the devices they need.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaShoppingCart className='icon' size='m'/>
+                                    <h3 className='card-body'>Emergency Essential Items</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller'>Social workers often reach out to Helping Hands- There
+                                After Foster Care when a youth reports that they have no food or are in desperate need of diapers, gas, transportation, debt management, etc. We provide funding and/or necessary items to help youth meet their basic living requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaBaby className='icon' size='m'/>
+                                    <h3 className='card-body'>Parenting</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller'>Some youth aging out of foster care become parents as young adults. We help furnish their nursery and provide needed baby care products.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaGifts className='icon' size='m'/>
+                                    <h3 className='card-body'>First Night Home Baskets</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller'>We provide youth moving into their first apartment a laundry basket full of the items they need for their first night in a new home. These baskets include a pillow, blanket, silverware, a sauce pan, towels, soap, a meal, and other necessary items. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaGavel className='icon' size='m'/>
+                                    <h3 className='card-body'>Incarceration</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller'>When a youth who aged out of foster care is incarcerated they are detained without the benefit of parents or other family members to help with money for toiletries and commissary items. They are also left without the social support of people who care. We deposit money on incarcerated youth’s commissary accounts. We send birthday and Christmas cards to let them know we care. Upon their release, we help support their needs for a wardrobe, phone, and other essentials.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        </Masonry>
                     </div>
                 </div>
             </div>
@@ -84,5 +151,5 @@ const HomePage = (props) => {
     )
 }
 
-export default HomePage;
+export default Services;
 
