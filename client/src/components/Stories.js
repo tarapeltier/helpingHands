@@ -235,7 +235,7 @@ const Stories = (props) => {
                     </div>
                 </div>
                 <div className='content-local'>
-                    <h1 style={{'margin-bottom':'8%'}}>Highlighted Stories of Success</h1>
+                    <h1 className='story-wrap' style={{'marginBottom':'8%','padding':'2%'}}>Highlighted Stories of Success</h1>
                     <Masonry
                         breakpointCols={{default: 3,
                                         1500: 2,

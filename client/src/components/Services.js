@@ -20,6 +20,7 @@ const Services = (props) => {
     }
 
     const directHome = () =>{
+        console.log('before redirect admin',isAdmin)
         navigate('/home', {state:{admin: isAdmin}})
         }
 
@@ -49,7 +50,7 @@ const Services = (props) => {
                 </div>
                 <div className='content-local'>
                     
-                    <div className='headline-local'>
+                    <div className='story-wrap' style={{'marginBottom':'8%','padding':'2%'}}>
                         <p>We work one-on-one with young adults ageing out of foster care
                             to support their individual needs. Some available services include:
                         </p>

@@ -8,7 +8,7 @@ const HomePage = (props) => {
     //avoid crash when rendered without state props
     let propsAdmin;
     
-    if (props.location.state === null){
+    if (props.location.state === null || !props.location.state.admin ){
         console.log('its actually false')
         propsAdmin = false
     }
@@ -57,9 +57,9 @@ const HomePage = (props) => {
                     </div>
                 </div>
                 <div className='content-local'>
-                    <div className='mission'>
+                    <div className='mission story-wrap'>
                         <h3 className='mission-title'>Our Mission:</h3>
-                        <p className='mission-body'>HH-TAFC supports youth aging out of foster care to successfully transition
+                        <p className='mission-body'>Helping Hands - There After Foster Care supports youth emerging out of the foster care system to successfully transition
                         into adulthood.</p>
                     </div>
                 </div>

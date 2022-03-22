@@ -113,8 +113,8 @@ const Donate = (props) => {
                     </div>
                 </div>
                 <div className='content-donate'>
-                    <div className='header-wrapper'>
-                        <p>If you are feeling generous, please consider contributing to Helping Hands. </p>
+                    <div className='header-wrapper story-wrap'>
+                        <p>If you want to help, please consider contributing to Helping Hands. </p>
                         <p>We are always accepting in-kind donations, one-time donations, and recurring contributions.</p>
                     </div>
                     <div className='column-wrapper'>

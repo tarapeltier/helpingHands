@@ -49,15 +49,22 @@ const AboutUs = (props) => {
                 <div className='content-local'>
                     <div className='about-wrapper'>
                         
+                        
+                        <div className='story-wrap'>
+                            <p className='story-body'>Helping Hands is a charitable foundation dedicated to young adults
+                            emerging out of the foster care system. </p>
+                            <p className='story-body'>Youth who turn 18 while in foster care often enter
+                                adulthood without the benefit of a support system. Nearly 1/3 of youth who age of foster care
+                                experience homelessness before they are 21. Many experience unemployment, become
+                                parents at an early age, and struggle financially.</p>
+                            <p className='story-body'>We work with volunteers and donors to help these young adults
+                                overcome any difficulties they may face in their transition to independent living. </p>
+                            <p></p>
+                        </div>
                         <div className='board'>
                             <h3 className='board-title'>Board Members:</h3>
                             <BoardMembers/>
                         </div>
-                        <p></p>
-                        <p className='story-body'>Youth who turn 18 while in foster care often enter
-                            adulthood without the benefit of a support system. Nearly 1/3 of youth who age of foster care
-                            experience homelessness before they are 21. Many experience unemployment, become
-                            parents at an early age, and struggle financially.</p>
                         <div className='contact'>
                             <h3 className='contact-title'>Contact Us:</h3>
                             <p className='contact-body'>Visit us at 1234 Noneya Way</p>

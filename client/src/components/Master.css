@@ -53,7 +53,10 @@
 }
 
 .header-wrapper {
+    margin: auto;
     margin-top: 10%;
+    width: 80%;
+    padding: 2%;
 }
 
 .column-wrapper {
@@ -80,7 +83,8 @@
 }
 
 .mission {
-    padding: 25%;
+    padding: 13%;
+    margin-top: 10%;
     text-align: left;
 }
 
@@ -94,14 +98,19 @@
     flex: 1;
 }
 
+.story-wrap {
+    background-color: rgba(255,255,255,0.5);
+}
+
 .board {
+    margin-top: 10%;
     display: block;
     flex: 1;
 }
 
 .contact {
     flex: 1;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .contact-body {
@@ -149,7 +158,9 @@
 }
 
 .story-body {
-    margin-top: 10%;
+    margin: auto;
+    margin-top: 4%;
+    width: 90%;
 }
 
 .card-inline {
@@ -203,7 +214,7 @@ tr:nth-child(odd) {
 
 .board-image {
     margin-top: 10%;
-    max-width: 40%;
+    max-width: 60%;
 }
 
 .card-wrapper {
@@ -347,6 +358,7 @@ tr:nth-child(odd) {
 
 .don-input {
     display: block;
+    border: none;
 }
 
 .payment-button {

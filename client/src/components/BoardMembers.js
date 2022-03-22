@@ -8,27 +8,27 @@ const BoardMembers = (props) => {
         <>
         <div className="card-deck">
             <div className="card board-card">
-                <img className="card-img-top board-image" src="Chrystal.jpg" alt="Card image cap"/>
+                <img className="card-img-top board-image rounded-circle" src="beverly.jpg" alt="Card image cap"/>
                 <div className="card-body">
-                <p className="card-title">Beverly Haller</p>
+                <h5 className="card-title">Beverly Haller</h5>
                 </div>
             </div>
             <div className="card board-card">
-                <img className="card-img-top board-image" src="Sharon.jpg" alt="Card image cap"/>
+                <img className="card-img-top board-image rounded-circle" src="Sharon.jpg" alt="Card image cap"/>
                 <div className="card-body">
-                <p className="card-title">Sharon Ridley</p>
+                <h5 className="card-title">Sharon Ridley</h5>
                 </div>
             </div>
             <div className="card board-card">
-                <img className="card-img-top board-image" src="sue.jpg" alt="Card image cap"/>
+                <img className="card-img-top board-image rounded-circle" src="sue.jpg" alt="Card image cap"/>
                 <div className="card-body">
-                <p className="card-title">Sue Morgan</p>
+                <h5 className="card-title">Sue Morgan</h5>
                 </div>
             </div>
             <div className="card board-card">
-                <img className="card-img-top board-image" src="tan.jpg" alt="Card image cap"/>
+                <img className="card-img-top board-image rounded-circle" src="tan.jpg" alt="Card image cap"/>
                 <div className="card-body">
-                <p className="card-title">Tan Williams</p>
+                <h5 className="card-title">Tan Williams</h5>
                 </div>
             </div>
             </div>
