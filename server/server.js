@@ -35,14 +35,16 @@ app.post('/single', upload.single('image'), (req, res) => {
 
 //handle payment through stripe
 app.post("/payment", cors(), async (req, res) => {
-	let { amount, id } = req.body
+	console.log("body",req.body)
+	let { amount, id, description, receipt_email } = req.body
 	try {
 		const payment = await stripe.paymentIntents.create({
 			amount,
 			currency: "USD",
-			description: "Spatula company",
+			description,
 			payment_method: id,
-			confirm: true
+			confirm: true,
+			receipt_email
 		})
 		console.log("Payment", payment)
 		res.json({

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link, navigate} from '@reach/router';
+import {Link} from '@reach/router';
 import BoardMembers from './BoardMembers';
 import './Master.css';
 
@@ -18,41 +18,30 @@ const AboutUs = (props) => {
         console.log('admin is false')
     }
 
-    const directHome = () =>{
-        navigate('/home', {state:{admin: isAdmin}})
-        }
 
     return (
         <>
-            <div className='main'>
-                <div className='menu'>
-                    <div className='menu-head'>
-                        <img className='header-img' src='header.png' alt='logo' onClick={()=>directHome()} ></img>
-                    </div>
-                    <div className='menu-links'>
-                        <ul>
-                        <li>
-                                <Link className='menu-link' to="/about" state={{admin: isAdmin}}> Who we are </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Who we help </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/services" state={{admin: isAdmin}}> What we do </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/help" state={{admin: isAdmin}}> How you can help </Link>
-                            </li>
-                        </ul>
-                    </div>
+            <div className='nav'>
+                <div className='nav-img-cont'>
+                    <img className='nav-img' src='biglogo2.jpg' alt='logo' ></img>
                 </div>
+                <div className='nav-menu'>
+                    <Link className='menu-link' to="/" state={{admin: isAdmin}}> Home </Link>
+                    <Link className='menu-link' to="/about" state={{admin: isAdmin}}> About Us </Link>
+                    <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Stories </Link>
+                    <Link className='menu-link' to="/services" state={{admin: isAdmin}}> Services </Link>
+                    <Link className='menu-link-don' to="/help" state={{admin: isAdmin}}> Donate </Link>
+                </div>
+            </div>
+            <div className='main'>
+                
                 <div className='content-local'>
                     <div className='about-wrapper'>
                         
                         
                         <div className='story-wrap'>
-                            <p className='story-body'>Helping Hands is a charitable foundation dedicated to young adults
-                            emerging out of the foster care system. </p>
+                            <p className='story-body'>Helping Hands is a charitable foundation dedicated to helping young adults
+                            who are emerging out of the foster care system. </p>
                             <p className='story-body'>Youth who turn 18 while in foster care often enter
                                 adulthood without the benefit of a support system. Nearly 1/3 of youth who age of foster care
                                 experience homelessness before they are 21. Many experience unemployment, become

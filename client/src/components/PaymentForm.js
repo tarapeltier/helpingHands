@@ -7,8 +7,8 @@ const CARD_OPTIONS = {
 	iconStyle: "solid",
 	style: {
 		base: {
-			iconColor: "#c4f0ff",
-			color: "#fff",
+			iconColor: "#3e387a",
+			color: "#3e387a",
 			fontWeight: 500,
 			fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
 			fontSize: "16px",
@@ -25,6 +25,9 @@ const CARD_OPTIONS = {
 
 export default function PaymentForm() {
     const [success, setSuccess ] = useState(false)
+    const [amount, setAmount ] = useState(0)
+    const [description, setDescription] = useState("")
+    const [email, setEmail] = useState("")
     const stripe = useStripe()
     const elements = useElements()
 
@@ -40,9 +43,19 @@ export default function PaymentForm() {
     if(!error) {
         try {
             const {id} = paymentMethod
+            let formattedAmount
+            if (amount.charAt(0) === "$"){
+                formattedAmount = amount.substring(1) + '00'
+            }
+            else{
+                formattedAmount = amount +'00'
+            }
             const response = await axios.post("http://localhost:8000/payment", {
-                amount: 1000,
-                id
+                amount: formattedAmount,
+                id,
+                description,
+                receipt_email:email,
+
             })
 
             if(response.data.success) {
@@ -68,15 +81,26 @@ export default function PaymentForm() {
                 </div>
             </fieldset>
             <div className="don-wrap">
-                <div className="inp-wrap">
-                    <label>Amount:</label>
-                    <input type='text' defaultValue='$' className="don-input"></input>
-                    <label>Note:</label>
-                    <input type='text' className="don-input"></input>
-                    <label>Email:</label>
-                    <input type='text' className="don-input"></input>
+                <div className="inp-flex">
+                    <div className="inp-wrap">
+                        <div className="inp-flex">
+                            <label>Amount:</label>
+                            <input type='text' id="amount" onChange={e=>setAmount(e.target.value)} defaultValue='$0' className="don-input"></input>
+                        </div>
+                        <div className="inp-flex">
+                            <label>Email:</label>
+                            <input type='text' id="email" onChange={e=>setEmail(e.target.value)} className="don-input"></input>
+                        </div>
+                    </div>
+                    <div className="don-area">
+                        <div className="area-flex">
+                            <label>Note:</label>
+                            <textarea id="description" rows="5" onChange={e=>setDescription(e.target.value)} className="area-input"></textarea>
+                        </div>
+                    </div>
                 </div>
                 <button className='btn btn-outline-primary payment-button shadow-none'>Donate</button>
+                
             </div>
         </form>
         :

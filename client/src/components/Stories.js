@@ -210,36 +210,26 @@ const Stories = (props) => {
         
     return (
         <>
-            
-            <div className='main'>
-                <div className='menu'>
-
-                    <div className='menu-head'>
-                        <img className='header-img' src='header.png' alt='logo' onClick={()=>directHome()} ></img>
-                    </div>
-                    <div className='menu-links'>
-                        <ul>
-                            <li>
-                                <Link className='menu-link' to="/about" state={{admin: isAdmin}}> Who we are </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Who we help </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/services" state={{admin: isAdmin}}> What we do </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/help" state={{admin: isAdmin}}> How you can help </Link>
-                            </li>
-                        </ul>
-                    </div>
+            <div className='nav'>
+                <div className='nav-img-cont'>
+                    <img className='nav-img' src='biglogo2.jpg' alt='logo' ></img>
                 </div>
+                <div className='nav-menu'>
+                    <Link className='menu-link' to="/" state={{admin: isAdmin}}> Home </Link>
+                    <Link className='menu-link' to="/about" state={{admin: isAdmin}}> About Us </Link>
+                    <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Stories </Link>
+                    <Link className='menu-link' to="/services" state={{admin: isAdmin}}> Services </Link>
+                    <Link className='menu-link-don' to="/help" state={{admin: isAdmin}}> Donate </Link>
+                </div>
+            </div>
+            <div className='main'>
+            
                 <div className='content-local'>
                     <h1 className='story-wrap' style={{'marginBottom':'8%','padding':'2%'}}>Highlighted Stories of Success</h1>
                     <Masonry
                         breakpointCols={{default: 3,
-                                        1500: 2,
-                                        800: 1}}
+                                        1000: 2,
+                                        700: 1}}
                         className="my-masonry-grid"
                         columnClassName="my-masonry-grid_column">
                         {

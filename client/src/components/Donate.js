@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Link, navigate} from '@reach/router';
+import {Link} from '@reach/router';
 import axios from 'axios';
 import { FaBackspace } from "react-icons/fa";
 import './Master.css';
@@ -8,7 +8,6 @@ import StripeContainer from "./StripeContainer"
 const Donate = (props) => {
     const [newNeed,setNewNeed] = useState("");
     const [allNeeds,setAllNeeds] = useState([]);
-    const [errors, setErrors] = useState([]);
     const [isAdmin, setIsAdmin] = useState(false);
 
     console.log(props)
@@ -33,9 +32,6 @@ const Donate = (props) => {
             console.log(err);})
     }, [])
 
-    const directHome = () =>{
-        navigate('/home', {state:{admin: isAdmin}})
-        }
 
     const submitHandler2 = (e) => {
         e.preventDefault()
@@ -59,8 +55,6 @@ const Donate = (props) => {
                 for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
                     errorArr.push(errorResponse[key].message)
                 }
-                // Set Errors
-                setErrors(errorArr);
             }) 
 
         
@@ -90,34 +84,39 @@ const Donate = (props) => {
     }
     return (
         <>
-            <div className='main'>
-                <div className='menu'>
-                    <div className='menu-head'>
-                        <img className='header-img' src='header.png' alt='logo' onClick={()=>directHome()} ></img>
-                    </div>
-                    <div className='menu-links'>
-                        <ul>
-                        <li>
-                                <Link className='menu-link' to="/about" state={{admin: isAdmin}}> Who we are </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Who we help </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/services" state={{admin: isAdmin}}> What we do </Link>
-                            </li>
-                            <li>
-                                <Link className='menu-link' to="/help" state={{admin: isAdmin}}> How you can help </Link>
-                            </li>
-                        </ul>
-                    </div>
+            <div className='nav'>
+                <div className='nav-img-cont'>
+                    <img className='nav-img' src='biglogo2.jpg' alt='logo' ></img>
                 </div>
+                <div className='nav-menu'>
+                    <Link className='menu-link' to="/" state={{admin: isAdmin}}> Home </Link>
+                    <Link className='menu-link' to="/about" state={{admin: isAdmin}}> About Us </Link>
+                    <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Stories </Link>
+                    <Link className='menu-link' to="/services" state={{admin: isAdmin}}> Services </Link>
+                    <Link className='menu-link-don' to="/help" state={{admin: isAdmin}}> Donate </Link>
+                </div>
+            </div>
+            <div className='main'>
+                
                 <div className='content-donate'>
                     <div className='header-wrapper story-wrap'>
                         <p>If you want to help, please consider contributing to Helping Hands. </p>
                         <p>We are always accepting in-kind donations, one-time donations, and recurring contributions.</p>
                     </div>
                     <div className='column-wrapper'>
+                        
+                        <div className='donate'>
+                            <h3>Monetary Donations</h3>
+                            <p>Make a one time donation, or sign up for recurring contributions</p>
+                            <StripeContainer/>
+                            <div className='donate-price'>
+                                <p className='price'>$50 provides for emergency food for 1 week</p>
+                                <p className='price'>$150 provides a “First Night Home Basket”</p>
+                                <p className='price'>$250 provides a pair of eyeglasses</p>
+                                <p className='price'>$500 provides for a nursery and layette for a new baby</p>
+                                <p className='price'>$1000 provides the security deposit on a new apartment</p>
+                            </div>
+                        </div>
                         <div className='in-kind'>
                             <h3>In-kind Donations</h3>
                             <table className='table in-kind-table'>
@@ -152,18 +151,6 @@ const Donate = (props) => {
                             </table>
                             {addNeedForm}
                             
-                        </div>
-                        <div className='donate'>
-                            <h3>Monetary Donations</h3>
-                            <p>Make a one time donation, or sign up for recurring contributions</p>
-                            <StripeContainer/>
-                            <div className='donate-price'>
-                                <p className='price'>$50 provides for emergency food for 1 week</p>
-                                <p className='price'>$150 provides a “First Night Home Basket”</p>
-                                <p className='price'>$250 provides a pair of eyeglasses</p>
-                                <p className='price'>$500 provides for a nursery and layette for a new baby</p>
-                                <p className='price'>$1000 provides the security deposit on a new apartment</p>
-                            </div>
                         </div>
                     </div>
                 </div>
