@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Router} from '@reach/router';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import './App.css';
 import HomePage from './components/HomePage'
 import AboutUs from './components/AboutUs'
@@ -12,14 +12,16 @@ const App = () => {
   
   return(
     <div className='App'>
-      <Router>
-        <HomePage path="/home" default />
-        <AboutUs path="/about" />
-        <Stories path="/stories" />
-        <Services path="/services" />
-        <Donate path="/help" />
-        <Admin path="/admin" />
-      </Router>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/stories" element={<Stories />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/help" element={<Donate />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </BrowserRouter>
     </div>
     ) 
 }

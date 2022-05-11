@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import {Link} from '@reach/router';
+import {Link,useLocation} from 'react-router-dom';
 import './Master.css';
+
 
 const HomePage = (props) => {
     const [isAdmin, setIsAdmin] = useState(false);
-
+    const location = useLocation();
+    const passedState = location.state;
+    console.log('yyy',passedState);
     //used to check for admin passed in through props
     let propsAdmin;
-    
+    console.log('xxx',props)
     //was admin passed in through props?
-    if (props.location.state === null || !props.location.state.admin ){
+    if (passedState === null || !passedState.admin ){
         propsAdmin = false
     }
     else{
@@ -34,11 +37,11 @@ const HomePage = (props) => {
                     <img className='nav-img' src='biglogo2.jpg' alt='logo' ></img>
                 </div>
                 <div className='nav-menu'>
-                    <Link className='menu-link' to="/" state={{admin: isAdmin}}> Home </Link>
-                    <Link className='menu-link' to="/about" state={{admin: isAdmin}}> About Us </Link>
-                    <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Stories </Link>
-                    <Link className='menu-link' to="/services" state={{admin: isAdmin}}> Services </Link>
-                    <Link className='menu-link-don' to="/help" state={{admin: isAdmin}}> Donate </Link>
+                    <Link className='menu-link' to={"/"} state={{admin: isAdmin}}> Home </Link>
+                    <Link className='menu-link' to={"/about"} state={{admin: isAdmin}}> About Us </Link>
+                    <Link className='menu-link' to={"/stories"} state={{admin: isAdmin}}> Stories </Link>
+                    <Link className='menu-link' to={"/services"} state={{admin: isAdmin}}> Services </Link>
+                    <Link className='menu-link-don' to={"/help"} state={{admin: isAdmin}}> Donate </Link>
                 </div>
             </div>
             <div className='main-home'>

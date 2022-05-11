@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import {Link} from '@reach/router';
+import {Link, useLocation} from 'react-router-dom';
 import { FaUserGraduate, FaClinicMedical, FaGifts, FaHome, FaShoppingCart, FaBaby, FaGavel } from "react-icons/fa";
 import Masonry from 'react-masonry-css';
 import './Master.css';
 
 const Services = (props) => {
     const [isAdmin, setIsAdmin] = useState(false);
-
+    const location = useLocation();
+    const passedState = location.state;
     console.log(props)
-    if (isAdmin === false && props.location.state.admin){
+    if (isAdmin === false && passedState.admin){
         setIsAdmin(true);
         console.log('admin is true')
         }
@@ -26,12 +27,11 @@ const Services = (props) => {
                     <img className='nav-img' src='biglogo2.jpg' alt='logo' ></img>
                 </div>
                 <div className='nav-menu'>
-                    <Link className='menu-link' to="/" state={{admin: isAdmin}}> Home </Link>
-                    <Link className='menu-link' to="/about" state={{admin: isAdmin}}> About Us </Link>
-                    <Link className='menu-link' to="/stories" state={{admin: isAdmin}}> Stories </Link>
-                    <Link className='menu-link' to="/services" state={{admin: isAdmin}}> Services </Link>
-                    <Link className='menu-link-don' to="/help" state={{admin: isAdmin}}> Donate </Link>
-                    
+                    <Link className='menu-link' to={"/"} state={{admin: isAdmin}}> Home </Link>
+                    <Link className='menu-link' to={"/about"} state={{admin: isAdmin}}> About Us </Link>
+                    <Link className='menu-link' to={"/stories"} state={{admin: isAdmin}}> Stories </Link>
+                    <Link className='menu-link' to={"/services"} state={{admin: isAdmin}}> Services </Link>
+                    <Link className='menu-link-don' to={"/help"} state={{admin: isAdmin}}> Donate </Link>
                 </div>
             </div>
             <div className='main'>

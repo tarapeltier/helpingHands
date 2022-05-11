@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import {Link, navigate} from '@reach/router';
+import { useNavigate } from 'react-router-dom';
 import './Master.css';
 
 const Admin = () => {
     const truePass="mySecretPage"
     const [passIn,setPassIn] = useState("");
     const [errors, setErrors] = useState("");
-
+    let navigate = useNavigate();
     const checkPassword = (e) =>{
+        
         e.preventDefault();
         if (passIn === truePass){
-            navigate('/home', { state : {admin: true}})}
+            navigate('/', { state : {admin: true}})}
         else {
                 setErrors('incorrect password');
             }
