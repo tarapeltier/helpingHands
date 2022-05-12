@@ -50,7 +50,7 @@ export default function PaymentForm() {
             else{
                 formattedAmount = amount +'00'
             }
-            const response = await axios.post("http://localhost:8000/payment", {
+            const response = await axios.post("/payment", {
                 amount: formattedAmount,
                 id,
                 description,

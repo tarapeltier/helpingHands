@@ -33,7 +33,7 @@ const Stories = (props) => {
 
 
     useEffect(()=>{
-        axios.get("http://localhost:8000/api/story/all")
+        axios.get("/api/story/all")
         .then((res)=>{
             console.log(res.data);
             setAllStories(res.data);})
@@ -56,7 +56,7 @@ const Stories = (props) => {
         data.append('image', fileData);
 
         //make a post request to upload image
-        axios.post('http://localhost:8000/single', data, {
+        axios.post('/single', data, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
@@ -84,7 +84,7 @@ const Stories = (props) => {
             setErrors2([...errors2, "Image file is required"])
         }
         else{
-            axios.post('http://localhost:8000/api/story/create', {
+            axios.post('/api/story/create', {
                 title, //shorthand
                 body,
                 imageFile: fileData.name
@@ -144,7 +144,7 @@ const Stories = (props) => {
         }
 
         //make a put request to edit story
-        axios.put('http://localhost:8000/api/story/'+story._id, {
+        axios.put('/api/story/'+story._id, {
             title: submitEditTitle, 
             body: submitEditBody,
             imageFile: story.imageFile
@@ -172,7 +172,7 @@ const Stories = (props) => {
 
     const deleteThis = (e, storyId) => {
         e.preventDefault();
-        axios.delete('http://localhost:8000/api/story/' + storyId)
+        axios.delete('/api/story/' + storyId)
         .then(res => {
             console.log(res);
             setAllStories(allStories.filter(story => story._id !== storyId ))

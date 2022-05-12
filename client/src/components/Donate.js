@@ -25,7 +25,7 @@ const Donate = (props) => {
 
 
     useEffect(()=>{
-        axios.get("http://localhost:8000/api/need/all")
+        axios.get("/api/need/all")
         .then((res)=>{
             console.log(res.data);
             setAllNeeds(res.data);})
@@ -40,7 +40,7 @@ const Donate = (props) => {
         console.log(newNeed)
         
         //make a post request to create a new need
-        axios.post('http://localhost:8000/api/need/create', {
+        axios.post('/api/need/create', {
             description: newNeed
             })
             .then(res=>{
@@ -63,7 +63,7 @@ const Donate = (props) => {
 
     const deleteThis = (e, needId) => {
         e.preventDefault();
-        axios.delete('http://localhost:8000/api/need/' + needId)
+        axios.delete('/api/need/' + needId)
         .then(res => {
             console.log(res);
             setAllNeeds(allNeeds.filter(need => need._id !== needId ))
