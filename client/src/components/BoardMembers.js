@@ -1,12 +1,19 @@
 import React from 'react'
 import './Master.css';
+import Masonry from 'react-masonry-css';
 
 const BoardMembers = (props) => {
     
 
     return (
         <>
-        <div className="card-deck">
+        <Masonry
+            breakpointCols={{default: 4,
+                            1000: 3,
+                            700: 2}}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column">
+            
             <div className="card board-card">
                 <img className="card-img-top board-image rounded-circle" src="beverly_headshot2.jpg" alt="Card cap1"/>
                 <div className="card-body">
@@ -31,8 +38,6 @@ const BoardMembers = (props) => {
                 <h5 className="card-title">Lisa Ogle</h5>
                 </div>
             </div>
-        </div>
-        <div className="card-deck">
             <div className="card board-card">
                 <img className="card-img-top board-image rounded-circle" src="Tam.jpg" alt="Card cap5"/>
                 <div className="card-body">
@@ -57,7 +62,8 @@ const BoardMembers = (props) => {
                 <h5 className="card-title">Jacob Boswell</h5>
                 </div>
             </div>
-        </div>
+        </Masonry>
+        
         </>
     )
 }

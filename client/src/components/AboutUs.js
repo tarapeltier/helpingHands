@@ -28,7 +28,7 @@ const AboutUs = (props) => {
                 </div>
                 <div className='nav-menu'>
                     <Link className='menu-link' to={"/"} state={{admin: isAdmin}}> Home </Link>
-                    <Link className='menu-link' to={"/about"} state={{admin: isAdmin}}> About Us </Link>
+                    <Link className='menu-link' to={"/about"} state={{admin: isAdmin}}> About </Link>
                     <Link className='menu-link' to={"/stories"} state={{admin: isAdmin}}> Stories </Link>
                     <Link className='menu-link' to={"/services"} state={{admin: isAdmin}}> Services </Link>
                     <Link className='menu-link-don' to={"/help"} state={{admin: isAdmin}}> Donate </Link>
