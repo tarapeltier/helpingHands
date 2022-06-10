@@ -5,12 +5,12 @@
     
 }
 
+
 .nav{
     height: 250px;
     border-bottom: #3e387a solid 2px;
     overflow: hidden;
 }
-
 
 
 .nav-img-cont{
@@ -145,9 +145,21 @@
 
 .header-wrapper {
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     width: 80%;
     padding: 2%;
+}
+
+.header-wrapper p{
+    font-size: small;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cash{
+    margin-top: 5%;
+    font-size: small;
 }
 
 .column-wrapper {
@@ -210,6 +222,32 @@
     flex: 80%;
     }
 }
+
+@media (min-width: 1000px){
+    .masonry-wrapper{
+        max-width: 875px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1500px){
+    .masonry-wrapper{
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 700px){
+    .masonry-wrapper{
+        max-width: 450px;
+        margin: auto;
+    }
+}
+
+.story-card-title{
+    margin-bottom: 8% !important;
+}
+
 .header-img {
     padding: 10%;
     width: 100%;
@@ -237,6 +275,8 @@
 
 .story-wrap {
     background-color: rgba(255,255,255,0.5);
+    margin-bottom: 4%;
+    padding: 2%;
 }
 
 .board {
@@ -329,13 +369,15 @@ tr:nth-child(odd) {
 
 .btn-outline-primary {
     margin: 5px !important;
+    background-color: #3e387a !important;
+    color: white !important;
     border-color: #3e387a !important;
-    color: #3e387a !important ;
 }
 
 .btn-outline-primary:hover {
-    background-color: #3e387a !important;
-    color: white !important;
+    background-color: white !important;
+    border-color: #3e387a !important;
+    color: #3e387a !important ;
 }
 
 .card-deck {
@@ -350,6 +392,10 @@ tr:nth-child(odd) {
     margin-right: 8%;
     display: flex;
     justify-content: space-around;
+}
+
+.board-title{
+    margin-bottom: 5%;
 }
 
 .board-card {
@@ -379,6 +425,7 @@ tr:nth-child(odd) {
 .card-header {
     background-color: rgba(255, 255, 255, 0.7) !important;
 }
+
 .local-card {
     margin: 1%;
     background-color: rgba(255, 255, 255, 0.212) !important;
@@ -426,7 +473,7 @@ tr:nth-child(odd) {
     width: auto;
 }
 .my-masonry-grid_column {
-    padding-left: 30px; /* gutter size */
+    padding: 2.5%; /* gutter size */
     background-clip: padding-box;
 }
 
@@ -448,6 +495,11 @@ tr:nth-child(odd) {
 
 .card-title {
     margin: auto;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-size: medium;
 }
 
 .flip-card {
@@ -537,9 +589,37 @@ tr:nth-child(odd) {
     margin-bottom: 10px;
 }
 
+.inp-dynamic {
+    display: flex !important;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
 .area-flex {
     display: flex !important;
     justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+    .inp-dynamic{
+        display: block !important;
+    }
+
+    .inp-wrap{
+        width: 100%;
+    }
+    .inp-flex{
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1200px) {
+    .board-card-title{
+        font-size: small !important;
+    }
+    .board-card-subtitle{
+        font-size: small !important;
+    }
 }
 
 .payment-button {
@@ -547,6 +627,15 @@ tr:nth-child(odd) {
 }
 
 .my-card-text {
-    margin: 10%;
+    margin: 1%;
     height: 80%;
 }
+
+.donate-cta{
+    margin-bottom: 7%;
+}
+
+.card-element{
+    margin-top: 5%;
+}
+

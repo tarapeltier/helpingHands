@@ -41,14 +41,16 @@ const AboutUs = (props) => {
                         
                         
                         <div className='story-wrap'>
-                            <p className='story-body'>Helping Hands is a charitable foundation dedicated to helping young adults
-                            who are emerging out of the foster care system. </p>
-                            <p className='story-body'>Youth who turn 18 while in foster care often enter
-                                adulthood without the benefit of a support system. Nearly 1/3 of youth who age of foster care
-                                experience homelessness before they are 21. Many experience unemployment, become
-                                parents at an early age, and struggle financially.</p>
-                            <p className='story-body'>We work with volunteers and donors to help these young adults
-                                overcome any difficulties they may face in their transition to independent living. </p>
+                            <p className='story-body'>Helping Hands is a charitable organization dedicated to helping young 
+                                adults who are aging out of the foster care system. Working with local social workers in Boulder County, 
+                                CO we help provide for the unmet needs of these youth by providing support and emergency funding for education, 
+                                housing, medical aids, and other essential items. </p>
+                            <p className='story-body'>Youth who turn 18 while in foster care often enter adulthood without the benefit of a 
+                                support system. After reaching the age of 18, 20% of youth who aged out of foster care will be instantly homeless. 
+                                Nearly 1/3 will experience homelessness before they are 21. Seventy percent of young women will become pregnant before 
+                                turning 21, and less than 3% will earn a college degree in their lifetime.</p>
+                            <p className='story-body'>We work with volunteers and donors to help these young adults overcome any difficulties they face 
+                                in their transition to independent living. </p>
                             <p></p>
                         </div>
                         <div className='board'>
@@ -57,9 +59,8 @@ const AboutUs = (props) => {
                         </div>
                         <div className='contact'>
                             <h3 className='contact-title'>Contact Us:</h3>
-                            <p className='contact-body'>Visit us at 1234 Noneya Way</p>
-                            <p className='contact-body'>ouremail@email.com</p>
-                            <p className='contact-body'>777-777-7777</p>
+                            <p className='contact-body'>thereafterfostercare@gmail.com</p>
+                            <p className='contact-body'>703-629-8469</p>
                         </div>
                     </div>
                 </div>

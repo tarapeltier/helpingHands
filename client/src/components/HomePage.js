@@ -55,22 +55,22 @@ const HomePage = (props) => {
                     <div className="carousel-item active">
                     <img src="IMG_4474_.jpg" className="d-block w-100 car-img" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5></h5>
+                        <p></p>
                     </div>
                     </div>
                     <div className="carousel-item">
-                    <img src="0olivia.jpg" className="d-block w-100 car-img" alt="..."/>
+                    <img src="gifts.jpeg" className="d-block w-100 car-img" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5></h5>
+                        <p></p>
                     </div>
                     </div>
                     <div className="carousel-item">
-                    <img src="Sharon.jpg" className="d-block w-100 car-img" alt="..."/>
+                    <img src="IMG_6029.jpg" className="d-block w-100 car-img" alt="..."/>
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h5></h5>
+                        <p></p>
                     </div>
                     </div>
                 </div>
@@ -87,8 +87,8 @@ const HomePage = (props) => {
                     
                     <div className='mission story-wrap'>
                         <h3 className='mission-title'>Our Mission:</h3>
-                        <p className='mission-body'>Helping Hands - There After Foster Care supports youth emerging out of the foster care system to successfully transition
-                        into adulthood.</p>
+                        <p className='mission-body'>HH-TAFC works with local social workers to meet the needs of youth
+                        aging out of foster care. While some needs are met through social service programs, youth who are aging out of foster care face challenges that youth with supportive parents do not. Helping Hands – There After Foster Care steps in to fill this gap. We support youth in their move toward independence. </p>
                     </div>
                 </div>
             </div>

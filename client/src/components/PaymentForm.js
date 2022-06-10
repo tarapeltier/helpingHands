@@ -11,10 +11,10 @@ const CARD_OPTIONS = {
 			color: "#3e387a",
 			fontWeight: 500,
 			fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-			fontSize: "16px",
+			fontSize: "20px",
 			fontSmoothing: "antialiased",
 			":-webkit-autofill": { color: "#fce883" },
-			"::placeholder": { color: "#87bbfd" }
+			"::placeholder": { color: "#3e387a" }
 		},
 		invalid: {
 			iconColor: "#ffc7ee",
@@ -77,11 +77,11 @@ export default function PaymentForm() {
         <form className='payment-form' onSubmit={handleSubmit}>
             <fieldset className="FormGroup">
                 <div className="FormRow">
-                    <CardElement options={CARD_OPTIONS}/>
+                    <CardElement className="card-element" options={CARD_OPTIONS}/>
                 </div>
             </fieldset>
             <div className="don-wrap">
-                <div className="inp-flex">
+                <div className="inp-dynamic">
                     <div className="inp-wrap">
                         <div className="inp-flex">
                             <label>Amount:</label>
