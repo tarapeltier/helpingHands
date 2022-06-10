@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 .App {
   text-align: center;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat' !important;
   font-weight: bold;
   color: #3e387a
 }

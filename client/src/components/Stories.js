@@ -33,7 +33,7 @@ const Stories = (props) => {
 
 
     useEffect(()=>{
-        axios.get("/api/story/all")
+        axios.get("http://localhost:8000/api/story/all")
         .then((res)=>{
             console.log(res.data);
             setAllStories(res.data);})
@@ -56,7 +56,7 @@ const Stories = (props) => {
         data.append('image', fileData);
 
         //make a post request to upload image
-        axios.post('/single', data, {
+        axios.post('http://localhost:8000/single', data, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
@@ -84,7 +84,7 @@ const Stories = (props) => {
             setErrors2([...errors2, "Image file is required"])
         }
         else{
-            axios.post('/api/story/create', {
+            axios.post('http://localhost:8000/api/story/create', {
                 title, //shorthand
                 body,
                 imageFile: fileData.name
@@ -144,7 +144,7 @@ const Stories = (props) => {
         }
 
         //make a put request to edit story
-        axios.put('/api/story/'+story._id, {
+        axios.put('http://localhost:8000/api/story/'+story._id, {
             title: submitEditTitle, 
             body: submitEditBody,
             imageFile: story.imageFile
@@ -172,7 +172,7 @@ const Stories = (props) => {
 
     const deleteThis = (e, storyId) => {
         e.preventDefault();
-        axios.delete('/api/story/' + storyId)
+        axios.delete('http://localhost:8000/api/story/' + storyId)
         .then(res => {
             console.log(res);
             setAllStories(allStories.filter(story => story._id !== storyId ))
@@ -222,10 +222,11 @@ const Stories = (props) => {
             <div className='main'>
             
                 <div className='content-local'>
-                    <h1 className='story-wrap' style={{'marginBottom':'8%','padding':'2%'}}>Highlighted Stories of Success</h1>
+                    <h1 className='story-wrap'>Highlighted Stories of Success</h1>
+                    <div className='masonry-wrapper'>
                     <Masonry
                         breakpointCols={{default: 3,
-                                        1000: 2,
+                                        1500: 2,
                                         700: 1}}
                         className="my-masonry-grid"
                         columnClassName="my-masonry-grid_column">
@@ -252,7 +253,7 @@ const Stories = (props) => {
                                             <img className="card-img-top" src={require('../assets/'+story.imageFile)} alt="Card cap"/>
                                             <div className="card-body">
                                                 <div className='flex-container'>
-                                                    <h5 className="card-title">{story.title}</h5>
+                                                    <h5 className="card-title story-card-title">{story.title}</h5>
                                                     {deleteIcon}
                                                 </div>
                                                 <button className='btn btn-outline-primary shadow-none' type="button" data-bs-toggle="collapse" data-bs-target={"#read-more"+index} aria-expanded="false" aria-controls={"read-more"+index}>
@@ -261,7 +262,7 @@ const Stories = (props) => {
                                                 
                                                 <div className="collapse" id={"read-more"+index}>
                                                     <div className="card card-body">
-                                                        <pre className='card-body-wrap'><p className="card-text">{story.body}</p></pre>
+                                                        <pre className='card-body-wrap'><p className="card-text read-more">{story.body}</p></pre>
                                                     </div>
                                                 </div>
 
@@ -294,7 +295,7 @@ const Stories = (props) => {
                                 )
                             }
                     </Masonry>
-                    
+                    </div>
                     {addStoryForm}
                 </div>
             </div>

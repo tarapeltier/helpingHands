@@ -25,7 +25,7 @@ const Donate = (props) => {
 
 
     useEffect(()=>{
-        axios.get("/api/need/all")
+        axios.get("http://localhost:8000/api/need/all")
         .then((res)=>{
             console.log(res.data);
             setAllNeeds(res.data);})
@@ -40,7 +40,7 @@ const Donate = (props) => {
         console.log(newNeed)
         
         //make a post request to create a new need
-        axios.post('/api/need/create', {
+        axios.post('http://localhost:8000/api/need/create', {
             description: newNeed
             })
             .then(res=>{
@@ -63,7 +63,7 @@ const Donate = (props) => {
 
     const deleteThis = (e, needId) => {
         e.preventDefault();
-        axios.delete('/api/need/' + needId)
+        axios.delete('http://localhost:8000/api/need/' + needId)
         .then(res => {
             console.log(res);
             setAllNeeds(allNeeds.filter(need => need._id !== needId ))
@@ -101,17 +101,19 @@ const Donate = (props) => {
                 
                 <div className='content-donate'>
                     <div className='header-wrapper story-wrap'>
-                        <p>If you want to help, please consider contributing to Helping Hands. </p>
-                        <p>We are always accepting in-kind donations, one-time donations, and recurring contributions.</p>
+                        <h1 className='donate-cta'>How can you help?</h1>
+                        <p>Please consider donating to Helping Hands! All cash donations and in-kind 
+                            gifts go directly to enriching the lives of young adults in need.</p>
+                        <p> To sign up for monthly donations or to schedule item delivery, please contact us at thereafterfostercare@gmail.com</p>
                     </div>
                     <div className='column-wrapper'>
                         
                         <div className='donate'>
-                            <h3>Monetary Donations</h3>
-                            <p>Make a one time donation, or sign up for recurring contributions</p>
+                            <h2>Ongoing Needs</h2>
+                            <p className='cash'>Cash donations help us to meet the individual needs of the youth we support in a timely manner.</p>
                             <StripeContainer/>
                             <div className='donate-price'>
-                                <p className='price'>$50 provides for emergency food for 1 week</p>
+                                <p className='price'>$50 provides for emergency food for one week</p>
                                 <p className='price'>$150 provides a “First Night Home Basket”</p>
                                 <p className='price'>$250 provides a pair of eyeglasses</p>
                                 <p className='price'>$500 provides for a nursery and layette for a new baby</p>
@@ -119,7 +121,7 @@ const Donate = (props) => {
                             </div>
                         </div>
                         <div className='in-kind'>
-                            <h3>In-kind Donations</h3>
+                            <h2>Current Needs</h2>
                             <table className='table in-kind-table'>
                                 <thead>
                                     <tr>
