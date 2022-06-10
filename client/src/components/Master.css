@@ -124,21 +124,21 @@
 .content-home {
     padding: 0% 5% 5% 5%;
     width: 100%;
-    background-image: url("http://localhost:3000/bg3.png");
+    background-image: url("/home/ubuntu/helpinghands/client/public/bg3.png");
     background-size: cover;
 }
 
 .content-local {
     padding: 5%;
     width: 100%;
-    background-image: url("http://localhost:3000/bg3.png");
+    background-image: url("/home/ubuntu/helpinghands/client/public/bg3.png");
     background-size: cover;
 }
 
 .content-donate {
     width: 100%;
     background-color:#8ef3f7;
-    background-image: url("http://localhost:3000/bg3.png");
+    background-image: url("/home/ubuntu/helpinghands/client/public/bg3.png");
     background-size: cover;
     
 }

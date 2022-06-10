@@ -36,7 +36,7 @@ const BoardMembers = (props) => {
                 </div>
             </div>
             <div className="card board-card">
-                <img className="card-img-top board-image rounded-circle" src="sue.jpg" alt="Card cap3"/>
+                <img className="card-img-top board-image rounded-circle" src="Sue.jpg" alt="Card cap3"/>
                 <div className="card-body">
                     <h5 className="card-title board-card-title">Sue Ewig</h5>
                     <h5 className="card-subtitle board-card-subtitle">Board Member</h5>
