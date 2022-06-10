@@ -40,7 +40,7 @@ const Services = (props) => {
                     
                     <div className='story-wrap' style={{'marginBottom':'8%','padding':'2%'}}>
                         <p>We work one-on-one with young adults ageing out of foster care
-                            to support their individual needs. Some available services include:
+                            to support their individual needs. Some common examples of how we help include:
                         </p>
                     </div>
                     
@@ -60,10 +60,10 @@ const Services = (props) => {
                                     <h3 className='card-body'>Education</h3>
                                 </div>
                                 <div className='card local-card flip-back'>
-                                    <p className='card-body smaller my-card-text'>
-                                        Volunteers meet with youth to help them learn how to 
-                                        complete financial aid applications, apply to college, 
-                                        register for classes, and discuss majors.</p>
+                                    <p className='card-body smaller my-card-text' style={{marginTop: "20%"}}>
+                                    Volunteers meet with youth to help them learn how to complete 
+                                    financial aid applications, apply to college, register for classes, 
+                                    and discuss majors.</p>
                                 </div>
                             </div>
                         </div>
@@ -74,55 +74,9 @@ const Services = (props) => {
                                     <h3 className='card-body'>Housing</h3>
                                 </div>
                                 <div className='card local-card flip-back'>
-                                    <p className='card-body smaller my-card-text'>
-                                        Volunteers and community members help youth find and 
-                                        furnish long term housing. When necessary, we provide 
-                                        security deposits and first month’s rent.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flip-card'>
-                            <div className='flip-inner'>
-                                <div className='card local-card flip-front'>
-                                    <FaClinicMedical className='icon' size='m'/>
-                                    <h3 className='card-body'>Medical Aids</h3>
-                                </div>
-                                <div className='card local-card flip-back'>
-                                    <p className='card-body smaller my-card-text'>
-                                        Youth who have been in foster care often have medical 
-                                        needs that were not met when they were younger. Even 
-                                        though they might have Medicaid, it will not cover 
-                                        orthodontics or braces after they are 19. We work with 
-                                        social workers to ensure youth get the devices they need.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flip-card'>
-                            <div className='flip-inner'>
-                                <div className='card local-card flip-front'>
-                                    <FaShoppingCart className='icon' size='m'/>
-                                    <h3 className='card-body'>Emergency Essential Items</h3>
-                                </div>
-                                <div className='card local-card flip-back'>
-                                    <p className='card-body smaller my-card-text'>
-                                        Social workers often reach out to Helping Hands- There
-                                        After Foster Care when a youth reports that they have no 
-                                        food or are in desperate need of diapers, gas, transportation, 
-                                        debt management, etc. We provide funding and/or necessary 
-                                        items to help youth meet their basic living requirements.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flip-card'>
-                            <div className='flip-inner'>
-                                <div className='card local-card flip-front'>
-                                    <FaBaby className='icon' size='m'/>
-                                    <h3 className='card-body'>Parenting</h3>
-                                </div>
-                                <div className='card local-card flip-back'>
-                                    <p className='card-body smaller my-card-text'>
-                                        Some youth aging out of foster care become parents as young adults. 
-                                        We help furnish their nursery and provide needed baby care products.</p>
+                                    <p className='card-body smaller my-card-text' style={{marginTop: "20%"}}>
+                                    Volunteers and community members help youth find and furnish long term housing. 
+                                    When necessary, we provide security deposits and first month’s rent. </p>
                                 </div>
                             </div>
                         </div>
@@ -133,11 +87,24 @@ const Services = (props) => {
                                     <h3 className='card-body'>First Night Home Baskets</h3>
                                 </div>
                                 <div className='card local-card flip-back'>
-                                    <p className='card-body smaller my-card-text'>
-                                        We provide youth moving into their first apartment a laundry basket 
-                                        full of the items they need for their first night in a new home. These 
-                                        baskets include a pillow, blanket, silverware, a sauce pan, towels, soap, 
-                                        a meal, and other necessary items. </p>
+                                    <p className='card-body smaller my-card-text' style={{marginTop: "13%"}}>
+                                    We provide youth moving into their first apartment a laundry basket full 
+                                    of the items they need for their first night in a new home. These baskets 
+                                    include a pillow, blanket, silverware, a sauce pan, towels, soap, a meal, 
+                                    and other necessary items. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaBaby className='icon' size='m'/>
+                                    <h3 className='card-body'>Parenting</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller my-card-text' style={{marginTop: "20%"}}>
+                                    Many youth ageing out of foster care become parents as young adults. 
+                                    We help furnish their nursery and provide needed baby care items.</p>
                                 </div>
                             </div>
                         </div>
@@ -145,20 +112,48 @@ const Services = (props) => {
                             <div className='flip-inner'>
                                 <div className='card local-card flip-front'>
                                     <FaGavel className='icon' size='m'/>
-                                    <h3 className='card-body'>Incarceration</h3>
+                                    <h3 className='card-body'>Aid for the Incarcerated</h3>
                                 </div>
                                 <div className='card local-card flip-back'>
                                     <p className='card-body smaller my-card-text'>
-                                        When a youth who aged out of foster care is incarcerated they are detained 
-                                        without the benefit of parents or other family members to help with money 
-                                        for toiletries and commissary items. They are also left without the social 
-                                        support of people who care. We deposit money on incarcerated youth’s commissary 
-                                        accounts. We send birthday and Christmas cards to let them know we care. Upon 
-                                        their release, we help support their needs for a wardrobe, phone, and other essentials.</p>
+                                    When a youth who aged out of foster care is incarcerated they are sometimes 
+                                    detained without the benefit of parents or other family members who care. We 
+                                    send birthday and holiday cards to let them know they are not forgotten, and 
+                                    deposit money to help with commissary items. We plan in advance to provide a 
+                                    wardrobe, phone, and other essentials upon release.</p>
                                 </div>
                             </div>
                         </div>
-                        
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaClinicMedical className='icon' size='m'/>
+                                    <h3 className='card-body'>Medical Aids</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller my-card-text' style={{marginTop: "13%"}}>
+                                    Youth who have been in foster care often have medical needs that were not met 
+                                    when they were younger. Even though they might have Medicaid, it will not cover 
+                                    orthodontics or eyeglasses after they are 19. We work with social workers to ensure 
+                                    youth get the devices they need. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flip-card'>
+                            <div className='flip-inner'>
+                                <div className='card local-card flip-front'>
+                                    <FaShoppingCart className='icon' size='m'/>
+                                    <h3 className='card-body'>Emergency Essential Items</h3>
+                                </div>
+                                <div className='card local-card flip-back'>
+                                    <p className='card-body smaller my-card-text' style={{marginTop: "13%"}}>
+                                    Social workers often reach out when a youth 
+                                    reports that they have no food or are in desperate need of diapers, gas, transportation, 
+                                    debt management, etc. We provide funding and/or necessary items to help youth meet their 
+                                    basic living requirements. </p>
+                                </div>
+                            </div>
+                        </div>
                         </Masonry>
                     </div>
                 </div>
