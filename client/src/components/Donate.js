@@ -102,16 +102,14 @@ const Donate = (props) => {
                 <div className='content-donate'>
                     <div className='header-wrapper story-wrap'>
                         <h1 className='donate-cta'>How can you help?</h1>
-                        <p>Please consider donating to Helping Hands! All cash donations and in-kind 
+                        <p className='main-text'>Please consider donating to Helping Hands! All cash donations and in-kind 
                             gifts go directly to enriching the lives of young adults in need.</p>
-                        <p> To sign up for monthly donations or to schedule item delivery, please contact us at thereafterfostercare@gmail.com</p>
+                        <p className='main-text'> To sign up for monthly donations or to schedule item delivery, please contact us at thereafterfostercare@gmail.com</p>
                     </div>
                     <div className='column-wrapper'>
                         
                         <div className='donate'>
                             <h2>Ongoing Needs</h2>
-                            <p className='cash'>Cash donations help us to meet the individual needs of the youth we support in a timely manner.</p>
-                            <StripeContainer/>
                             <div className='donate-price'>
                                 <p className='price'>$50 provides for emergency food for one week</p>
                                 <p className='price'>$150 provides a “First Night Home Basket”</p>
@@ -119,6 +117,8 @@ const Donate = (props) => {
                                 <p className='price'>$500 provides for a nursery and layette for a new baby</p>
                                 <p className='price'>$1000 provides the security deposit on a new apartment</p>
                             </div>
+                            <StripeContainer/>
+                            
                         </div>
                         <div className='in-kind'>
                             <h2>Current Needs</h2>

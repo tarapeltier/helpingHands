@@ -41,15 +41,15 @@ const AboutUs = (props) => {
                         
                         
                         <div className='story-wrap'>
-                            <p className='story-body'>Helping Hands is a charitable organization dedicated to helping young 
-                                adults who are aging out of the foster care system. Working with local social workers in Boulder County, 
-                                CO we help provide for the unmet needs of these youth by providing support and emergency funding for education, 
+                            <p className='story-body main-text'>Helping Hands - There After Foster Care is a charitable organization dedicated to helping young 
+                                adults who are aging out of foster care. Working with local social workers in Boulder County, 
+                                CO we help provide for the unmet needs of these young adults by providing support and emergency funding for education, 
                                 housing, medical aids, and other essential items. </p>
-                            <p className='story-body'>Youth who turn 18 while in foster care often enter adulthood without the benefit of a 
-                                support system. After reaching the age of 18, 20% of youth who aged out of foster care will be instantly homeless. 
-                                Nearly 1/3 will experience homelessness before they are 21. Seventy percent of young women will become pregnant before 
-                                turning 21, and less than 3% will earn a college degree in their lifetime.</p>
-                            <p className='story-body'>We work with volunteers and donors to help these young adults overcome any difficulties they face 
+                            <p className='story-body main-text'>Youth who turn 18 while in foster care often enter adulthood without the benefit of a 
+                                support system. After reaching the age of 18, 20% of young adults who have aged out of foster care will be instantly homeless, 
+                                and nearly one-third will experience homelessness before they are 21. Seventy percent of young women will become pregnant before 
+                                turning 21, and fewer than 3% will earn a college degree in their lifetime.</p>
+                            <p className='story-body main-text'>We work with volunteers and donors to help these young adults overcome the difficulties they face 
                                 in their transition to independent living. </p>
                             <p></p>
                         </div>

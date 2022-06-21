@@ -39,8 +39,8 @@ const Services = (props) => {
                 <div className='content-local'>
                     
                     <div className='story-wrap' style={{'marginBottom':'8%','padding':'2%'}}>
-                        <p>We work one-on-one with young adults ageing out of foster care
-                            to support their individual needs. Some common examples of how we help include:
+                        <p className='main-text'>We work one on one with young adults aging out of foster care
+                            to support their individual needs. Some examples of the many ways we help include:
                         </p>
                     </div>
                     
@@ -60,10 +60,11 @@ const Services = (props) => {
                                     <h3 className='card-body'>Education</h3>
                                 </div>
                                 <div className='card local-card flip-back'>
-                                    <p className='card-body smaller my-card-text' style={{marginTop: "20%"}}>
-                                    Volunteers meet with youth to help them learn how to complete 
-                                    financial aid applications, apply to college, register for classes, 
-                                    and discuss majors.</p>
+                                    <p className='card-body smaller my-card-text' style={{marginTop: "10%"}}>
+                                    Volunteers meet with youth to help them learn how to complete a GED program, 
+                                    if necessary, choose a post-secondary field of study, apply to college or a 
+                                    technical training program, complete a financial aid application,  register 
+                                    for classes, and find and access educational support services.</p>
                                 </div>
                             </div>
                         </div>
@@ -75,8 +76,8 @@ const Services = (props) => {
                                 </div>
                                 <div className='card local-card flip-back'>
                                     <p className='card-body smaller my-card-text' style={{marginTop: "20%"}}>
-                                    Volunteers and community members help youth find and furnish long term housing. 
-                                    When necessary, we provide security deposits and first month’s rent. </p>
+                                    Volunteers and community members help youth find and furnish long-term housing. 
+                                    When necessary, we provide a security deposit and the first month’s rent. </p>
                                 </div>
                             </div>
                         </div>
@@ -89,8 +90,8 @@ const Services = (props) => {
                                 <div className='card local-card flip-back'>
                                     <p className='card-body smaller my-card-text' style={{marginTop: "13%"}}>
                                     We provide youth moving into their first apartment a laundry basket full 
-                                    of the items they need for their first night in a new home. These baskets 
-                                    include a pillow, blanket, silverware, a sauce pan, towels, soap, a meal, 
+                                    of the items they need for their first night in a new home. These  
+                                    include a pillow and blanket, silverware, a sauce-pan, towels, soap, a meal, 
                                     and other necessary items. </p>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@ const Services = (props) => {
                                 </div>
                                 <div className='card local-card flip-back'>
                                     <p className='card-body smaller my-card-text' style={{marginTop: "20%"}}>
-                                    Many youth ageing out of foster care become parents as young adults. 
+                                    Many youth aging out of foster care become parents as young adults. 
                                     We help furnish their nursery and provide needed baby care items.</p>
                                 </div>
                             </div>
@@ -116,11 +117,12 @@ const Services = (props) => {
                                 </div>
                                 <div className='card local-card flip-back'>
                                     <p className='card-body smaller my-card-text'>
-                                    When a youth who aged out of foster care is incarcerated they are sometimes 
-                                    detained without the benefit of parents or other family members who care. We 
-                                    send birthday and holiday cards to let them know they are not forgotten, and 
-                                    deposit money to help with commissary items. We plan in advance to provide a 
-                                    wardrobe, phone, and other essentials upon release.</p>
+                                    When a young adult who has aged out of foster care is incarcerated, it is often 
+                                    without the support of parents or 
+                                    other family members who care. We send birthday and holiday cards to let 
+                                    them know they are not forgotten, and deposit money to help with commissary 
+                                    items. We plan in advance to provide a wardrobe, phone, and other essentials 
+                                    they’ll need upon release.</p>
                                 </div>
                             </div>
                         </div>
@@ -133,9 +135,9 @@ const Services = (props) => {
                                 <div className='card local-card flip-back'>
                                     <p className='card-body smaller my-card-text' style={{marginTop: "13%"}}>
                                     Youth who have been in foster care often have medical needs that were not met 
-                                    when they were younger. Even though they might have Medicaid, it will not cover 
+                                    when they were younger. Even though they may receive Medicaid, it will not cover 
                                     orthodontics or eyeglasses after they are 19. We work with social workers to ensure 
-                                    youth get the devices they need. </p>
+                                    youth get the equipment they need. </p>
                                 </div>
                             </div>
                         </div>
@@ -147,9 +149,9 @@ const Services = (props) => {
                                 </div>
                                 <div className='card local-card flip-back'>
                                     <p className='card-body smaller my-card-text' style={{marginTop: "13%"}}>
-                                    Social workers often reach out when a youth 
-                                    reports that they have no food or are in desperate need of diapers, gas, transportation, 
-                                    debt management, etc. We provide funding and/or necessary items to help youth meet their 
+                                    Social workers often reach out to us when a young adult 
+                                    reports they have no food or are in desperate need of diapers, fuel, transportation, 
+                                    debt management, or other necessary assistance. We provide funding and/or items to help youth meet their 
                                     basic living requirements. </p>
                                 </div>
                             </div>
