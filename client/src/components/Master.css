@@ -28,6 +28,12 @@
     max-width: 1000px;
     
 }
+.main-text{
+    font-size: large;
+    width: 80% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .nav-menu{
     width: 90%;
@@ -151,7 +157,6 @@
 }
 
 .header-wrapper p{
-    font-size: small;
     width: 80%;
     margin-right: auto;
     margin-left: auto;
@@ -259,6 +264,9 @@
     text-align: left;
 }
 
+.mission-title {
+    margin-left: 10%;
+}
 .cropped{
     overflow: hidden;
 }
@@ -417,11 +425,6 @@ tr:nth-child(odd) {
     max-width: 60%;
 }
 
-.card-wrapper {
-    text-align: left;
-    margin-bottom: 10%;
-}
-
 .card-header {
     background-color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -446,9 +449,10 @@ tr:nth-child(odd) {
 
 .donate-price {
     margin-top: 5%;
+    margin-bottom: 5%;
     margin-left: 5%;
-    font-size: smaller;
-    text-align: left;
+    font-size: medium;
+    text-align: center;
 }
 
 .price {

@@ -87,8 +87,8 @@ const HomePage = (props) => {
                     
                     <div className='mission story-wrap'>
                         <h3 className='mission-title'>Our Mission:</h3>
-                        <p className='mission-body'>HH-TAFC works with local social workers to meet the needs of youth
-                        aging out of foster care. While some needs are met through social service programs, youth who are aging out of foster care face challenges that youth with supportive parents do not. Helping Hands – There After Foster Care steps in to fill this gap. We support youth in their move toward independence. </p>
+                        <p className='mission-body main-text'>Helping Hands - There After Foster Care works with local social workers to meet the needs of young adults who are
+                        aging out of foster care. While some of their needs are met through social service programs, they face challenges that youth with supportive parents do not. We step in to fill the gaps, supporting youth in their move toward independence. </p>
                     </div>
                 </div>
             </div>
