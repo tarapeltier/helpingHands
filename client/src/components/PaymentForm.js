@@ -61,7 +61,7 @@ export default function PaymentForm() {
                 }
                 
             }
-            const response = await axios.post("/api/payment", {
+            const response = await axios.post("http://localhost:8000/api/payment", {
                 amount: formattedAmount,
                 id,
                 description,
