@@ -22,7 +22,7 @@ require('./config/mongoose.config');
 require('./routes/need.routes')(app);
 require('./routes/story.routes')(app);
 require("dotenv").config()
-const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST)
+const stripe = require("stripe")(process.env.STRIPE_SECRET)
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
