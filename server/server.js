@@ -28,13 +28,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 //handle file upload
-app.post('/single', upload.single('image'), (req, res) => {
+app.post('/api/single', upload.single('image'), (req, res) => {
     console.log(req.file);
     res.send('File upload succesful');
 })
 
 //handle payment through stripe
-app.post("/payment", cors(), async (req, res) => {
+app.post("/api/payment", cors(), async (req, res) => {
 	console.log("body",req.body)
 	let { amount, id, description, receipt_email } = req.body
 	try {
