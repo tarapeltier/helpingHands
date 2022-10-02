@@ -4,14 +4,14 @@ import React from "react"
 import PaymentForm from "./PaymentForm"
 import './Master.css'
 
-const PUBLIC_KEY = "pk_test_51Kc6dFHXMr77qzvVpuOGlKvouGNS7uH7zQ7LLwzVdDaYYjysN3tABw30aUIDZITlBw3G82PqdLvRhts7y7xtPeoj001Th0fPhP"
+const PUBLIC_KEY = "pk_live_51KcDQAJedkG02fL68INuZIGSRSSPS733patoTwBZYLfM9XeUEJgJbDCAaSfMPFTVoYUVp0vPCwm6kWPEBMeLC7NA00o6Iquaze"
 
-const stripeTestPromise = loadStripe(PUBLIC_KEY)
+const stripePromise = loadStripe(PUBLIC_KEY)
 
 export default function StripeContainer() {
 	return (
         <div className="stripe-container">
-            <Elements stripe={stripeTestPromise}>
+            <Elements stripe={stripePromise}>
                 <PaymentForm />
             </Elements>
         </div>

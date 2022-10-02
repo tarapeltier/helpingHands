@@ -45,10 +45,21 @@ export default function PaymentForm() {
             const {id} = paymentMethod
             let formattedAmount
             if (amount.charAt(0) === "$"){
-                formattedAmount = amount.substring(1) + '00'
+                if (amount.includes('.')){
+                    formattedAmount = amount.substring(1).replace('.','')
+                }
+                else{
+                    formattedAmount = amount.substring(1) + '00'
+                }
             }
             else{
-                formattedAmount = amount +'00'
+                if (amount.includes('.')){
+                    formattedAmount = amount.replace('.','')
+                }
+                else{
+                    formattedAmount = amount +'00'
+                }
+                
             }
             const response = await axios.post("http://localhost:8000/payment", {
                 amount: formattedAmount,
@@ -63,8 +74,8 @@ export default function PaymentForm() {
                 setSuccess(true)
             }
 
-        } catch (error) {
-            console.log("Error", error)
+        } catch (payError) {
+            console.log("Error", payError)
         }
     } else {
         console.log(error.message)
