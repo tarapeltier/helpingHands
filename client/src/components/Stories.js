@@ -56,7 +56,7 @@ const Stories = (props) => {
         data.append('image', fileData);
 
         //make a post request to upload image
-        axios.post('http://localhost:8000/single', data, {
+        axios.post('http://localhost:8000/api/single', data, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
