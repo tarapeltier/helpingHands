@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import { FaBackspace } from "react-icons/fa";
-import './Master.css';
-import StripeContainer from "./StripeContainer"
+import '../App.css';
+import StripeContainer from "./StripeContainer";
 
 const Donate = (props) => {
     const [newNeed,setNewNeed] = useState("");
@@ -14,15 +14,7 @@ const Donate = (props) => {
     console.log(props)
     if (isAdmin === false && passedState.admin){
         setIsAdmin(true);
-        console.log('admin is true')
         }
-    else if (isAdmin === true) {
-        console.log('admin is true')
-    }
-    else {
-        console.log('admin is false')
-    }
-
 
     useEffect(()=>{
         axios.get("/api/need/all")
@@ -32,7 +24,6 @@ const Donate = (props) => {
         .catch((err)=>{
             console.log(err);})
     }, [])
-
 
     const submitHandler2 = (e) => {
         e.preventDefault()
@@ -44,21 +35,16 @@ const Donate = (props) => {
             description: newNeed
             })
             .then(res=>{
-                console.log(res); 
-                console.log(res.data);
-                setAllNeeds([...allNeeds,res.data])
+                setAllNeeds([...allNeeds,res.data]);
                 }
             )
             .catch(err=>{
-                console.log(err.response)
                 const errorResponse = err.response.data.errors; // Get the errors from err.response.data
                 const errorArr = []; // Define a temp error array to push the messages in
                 for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
-                    errorArr.push(errorResponse[key].message)
+                    errorArr.push(errorResponse[key].message);
                 }
-            }) 
-
-        
+            })
     }
 
     const deleteThis = (e, needId) => {
@@ -66,10 +52,9 @@ const Donate = (props) => {
         axios.delete('/api/need/' + needId)
         .then(res => {
             console.log(res);
-            setAllNeeds(allNeeds.filter(need => need._id !== needId ))
+            setAllNeeds(allNeeds.filter(need => need._id !== needId ));
         })
         .catch(err => console.log(err));
-
     }
 
     //conditional render for admin
@@ -98,7 +83,6 @@ const Donate = (props) => {
                 </div>
             </div>
             <div className='main'>
-                
                 <div className='content-donate'>
                     <div className='header-wrapper story-wrap'>
                         <h1 className='donate-cta'>How can you help?</h1>
@@ -107,7 +91,6 @@ const Donate = (props) => {
                         <p className='main-text'> To sign up for monthly donations or to schedule item delivery, please contact us at thereafterfostercare@gmail.com</p>
                     </div>
                     <div className='column-wrapper'>
-                        
                         <div className='donate'>
                             <h2>Ongoing Needs</h2>
                             <div className='donate-price'>
@@ -118,7 +101,6 @@ const Donate = (props) => {
                                 <p className='price'>$1000 provides the security deposit on a new apartment</p>
                             </div>
                             <StripeContainer/>
-                            
                         </div>
                         <div className='in-kind'>
                             <h2>Current Needs</h2>
@@ -142,7 +124,6 @@ const Donate = (props) => {
                                             deleteIcon = <></>
                                         }
                                         return(
-                                            
                                             <tr key={index}>
                                                 <td>{need.description}  {deleteIcon} </td>
                                                 
@@ -153,7 +134,6 @@ const Donate = (props) => {
                                 </tbody>
                             </table>
                             {addNeedForm}
-                            
                         </div>
                     </div>
                 </div>

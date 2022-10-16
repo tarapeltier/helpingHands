@@ -1,24 +1,15 @@
 import React, { useState } from 'react'
 import {Link,useLocation} from 'react-router-dom';
 import BoardMembers from './BoardMembers';
-import './Master.css';
+import '../App.css';
 
-const AboutUs = (props) => {
+const AboutUs = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const location = useLocation();
     const passedState = location.state;
-    console.log(props)
     if (isAdmin === false && passedState.admin){
         setIsAdmin(true);
-        console.log('admin is true')
         }
-    else if (isAdmin === true) {
-        console.log('admin is true')
-    }
-    else {
-        console.log('admin is false')
-    }
-
 
     return (
         <>
@@ -35,11 +26,8 @@ const AboutUs = (props) => {
                 </div>
             </div>
             <div className='main'>
-                
                 <div className='content-local'>
                     <div className='about-wrapper'>
-                        
-                        
                         <div className='story-wrap'>
                             <p className='story-body main-text'>Helping Hands - There After Foster Care is a charitable organization dedicated to helping young 
                                 adults who are aging out of foster care. Working with local social workers in Boulder County, 
