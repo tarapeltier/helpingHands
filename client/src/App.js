@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import HomePage from './components/HomePage'
-import AboutUs from './components/AboutUs'
-import Stories from './components/Stories'
-import Services from './components/Services'
-import Donate from './components/Donate'
+import HomePage from './components/HomePage';
+import AboutUs from './components/AboutUs';
+import Stories from './components/Stories';
+import Services from './components/Services';
+import Donate from './components/Donate';
 import Admin from './components/Admin';
 
 const App = () => {
