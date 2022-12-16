@@ -217,7 +217,7 @@
 }
 
 .in-kind-table {
-  margin-top: 10%;
+  margin-top: 5%;
   max-width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -649,3 +649,21 @@ tr:nth-child(odd) {
   margin-top: 5%;
 }
 
+.paypal-wrap{
+  margin-bottom: 15%;
+}
+
+.donate-head{
+  margin-bottom: 7%;
+}
+
+.qr-button{
+  margin-top: 5%;
+  width: 60%;
+  border: none;
+  outline: 0;
+}
+
+.qr-code{
+  width: 100%
+}
