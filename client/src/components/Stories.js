@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import { FaBackspace } from "react-icons/fa";
 import Masonry from 'react-masonry-css';
-import './Master.css';
+import '../App.css';
 
 const Stories = (props) => {
     const [title,setTitle] = useState("");
@@ -22,15 +22,7 @@ const Stories = (props) => {
     console.log(props)
     if (isAdmin === false && passedState.admin){
         setIsAdmin(true);
-        console.log('admin is true')
         }
-    else if (isAdmin === true) {
-        console.log('admin is true')
-    }
-    else {
-        console.log('admin is false')
-    }
-
 
     useEffect(()=>{
         axios.get("http://localhost:8000/api/story/all")
@@ -42,17 +34,14 @@ const Stories = (props) => {
     }, [])
 
     const fileChangeHandler = (e) => {
-        console.log(e.target.files[0])
         setFileData(e.target.files[0]);
     }
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log('we here2')
 
         //format post request to upload image
         const data = new FormData();
-        console.log(fileData)
         data.append('image', fileData);
 
         //make a post request to upload image
@@ -66,22 +55,18 @@ const Stories = (props) => {
                 }
             )
             .catch(err=>{
-                console.log('errrrrrrr')
-                console.log(err.response)
-                const errorResponse = err.response.data.errors; // Get the errors from err.response.data
-                const errorArr = []; // Define a temp error array to push the messages in
-                for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
-                    errorArr.push(errorResponse[key].message)
+                const errorResponse = err.response.data.errors; 
+                const errorArr = []; 
+                for (const key of Object.keys(errorResponse)) {
+                    errorArr.push(errorResponse[key].message);
                 }
                 // Set Errors
                 setErrors(errorArr);
             })
 
         //make a post request to create a new story
-        
         if (fileData === undefined){
-            console.log('xxxxxx no name')
-            setErrors2([...errors2, "Image file is required"])
+            setErrors2([...errors2, "Image file is required"]);
         }
         else{
             axios.post('http://localhost:8000/api/story/create', {
@@ -92,55 +77,48 @@ const Stories = (props) => {
                 .then(res=>{
                     console.log(res); 
                     console.log(res.data);
-                    setAllStories([...allStories,res.data])
+                    setAllStories([...allStories,res.data]);
                     }
                 )
                 .catch(err=>{
-                    console.log('we found an eroor')
-                    console.log(err.response)
-                    const errorResponse2 = err.response.data.errors; // Get the errors from err.response.data
-                    const errorArr2 = []; // Define a temp error array to push the messages in
-                    for (const key of Object.keys(errorResponse2)) { // Loop through all errors and get the messages
-                        errorArr2.push(errorResponse2[key].message)
+                    const errorResponse2 = err.response.data.errors; 
+                    const errorArr2 = []; 
+                    for (const key of Object.keys(errorResponse2)) { 
+                        errorArr2.push(errorResponse2[key].message);
                     }
                     // Set Errors
-                    console.log(5,errorArr2)
                     setErrors2(errorArr2);
                 }) 
         }
     }
     
-
     const editHandler = (e, story) => {
-        e.preventDefault()
-        console.log('we are editing')
+        e.preventDefault();
         
         //detect unchanged inputs
         let submitEditTitle;
         if (editTitle === "not-changed"){
-            console.log('not')
-            submitEditTitle=story.title
+            submitEditTitle=story.title;
         }
         else{
-            submitEditTitle = editTitle
+            submitEditTitle = editTitle;
         }
         let submitEditBody;
         if (editBody === "not-changed"){
-            console.log('not')
-            submitEditBody=story.body
+            submitEditBody=story.body;
         }
         else{
-            submitEditBody = editBody
+            submitEditBody = editBody;
         }
 
         //validate
         if (submitEditTitle.length < 3){
-            setErrors3([...errors3, "Title must be more than 3 characters"])
-            return
+            setErrors3([...errors3, "Title must be more than 3 characters"]);
+            return;
         }
         if (submitEditBody.length < 3){
-            setErrors3([...errors3, "Body must be more than 3 characters"])
-            return
+            setErrors3([...errors3, "Body must be more than 3 characters"]);
+            return;
         }
 
         //make a put request to edit story
@@ -150,37 +128,29 @@ const Stories = (props) => {
             imageFile: story.imageFile
             })
             .then(res=>{
-                console.log(res); 
-                console.log(res.data);
-                setErrors3([])
+                setErrors3([]);
                 window.location.reload();
                 }
             )
             .catch(err=>{
-                console.log(err.response)
-                const errorResponse3 = err.response.data.errors; // Get the errors from err.response.data
-                const errorArr3 = []; // Define a temp error array to push the messages in
-                for (const key of Object.keys(errorResponse3)) { // Loop through all errors and get the messages
-                    errorArr3.push(errorResponse3[key].message)
+                const errorResponse3 = err.response.data.errors; 
+                const errorArr3 = []; 
+                for (const key of Object.keys(errorResponse3)) { 
+                    errorArr3.push(errorResponse3[key].message);
                 }
                 // Set Errors
                 setErrors3(errorArr3);
             }) 
-            
-            
     }
 
     const deleteThis = (e, storyId) => {
         e.preventDefault();
         axios.delete('http://localhost:8000/api/story/' + storyId)
         .then(res => {
-            console.log(res);
-            setAllStories(allStories.filter(story => story._id !== storyId ))
+            setAllStories(allStories.filter(story => story._id !== storyId ));
         })
         .catch(err => console.log(err));
-
     }
-
 
     //conditional renders for admin
     let addStoryForm;
@@ -199,10 +169,10 @@ const Stories = (props) => {
                             </div>
                             <input type='file' onChange={fileChangeHandler} />
                             <button className='btn btn-outline-primary shadow-none' type='submit'>Add a new story</button>
-                        </form>
+                        </form>;
         }
         else {
-            addStoryForm = <></>
+            addStoryForm = <></>;
         }
         
     return (
@@ -220,33 +190,29 @@ const Stories = (props) => {
                 </div>
             </div>
             <div className='main'>
-            
                 <div className='content-local'>
                     <h1 className='story-wrap'>Highlighted Stories of Success</h1>
                     <div className='masonry-wrapper'>
-                    <Masonry
-                        breakpointCols={{default: 3,
-                                        1500: 2,
-                                        700: 1}}
-                        className="my-masonry-grid"
-                        columnClassName="my-masonry-grid_column">
-                        {
-                                
+                        <Masonry
+                            breakpointCols={{default: 3,
+                                            1500: 2,
+                                            700: 1}}
+                            className="my-masonry-grid"
+                            columnClassName="my-masonry-grid_column">
+                            {
                                 allStories.map((story, index) => {
-                                    console.log(story)
-
                                     //conditional renders for admin
                                     let deleteIcon;
                                     let editButton;
                                     if (isAdmin) {
-                                        deleteIcon = <FaBackspace onClick={(e)=>deleteThis(e,story._id)} className='delete'></FaBackspace>
+                                        deleteIcon = <FaBackspace onClick={(e)=>deleteThis(e,story._id)} className='delete'></FaBackspace>;
                                         editButton = <button className='btn btn-outline-primary shadow-none' type="button" data-bs-toggle="collapse" data-bs-target={"#edit"+index} aria-expanded="false" aria-controls={"edit"+index}>
                                                         Edit
-                                                    </button>
+                                                    </button>;
                                     }
                                     else {
-                                        deleteIcon = <></>
-                                        editButton = <></>
+                                        deleteIcon = <></>;
+                                        editButton = <></>;
                                     }
                                     return(
                                         <div key={index} className="card my-card">
@@ -259,18 +225,14 @@ const Stories = (props) => {
                                                 <button className='btn btn-outline-primary shadow-none' type="button" data-bs-toggle="collapse" data-bs-target={"#read-more"+index} aria-expanded="false" aria-controls={"read-more"+index}>
                                                     Read more
                                                 </button>
-                                                
                                                 <div className="collapse" id={"read-more"+index}>
                                                     <div className="card card-body">
                                                         <pre className='card-body-wrap'><p className="card-text read-more">{story.body}</p></pre>
                                                     </div>
                                                 </div>
-
                                                 {editButton}
-                                                
                                                 <div className="collapse" id={"edit"+index}>
                                                     <div className="card card-body">
-                                                        
                                                         <form onSubmit={(e)=>editHandler(e,story)}>
                                                             {errors3.map((err, index) => <p style={{color:'red'}} key={index}>{err}</p>)}
                                                             <h3>Edit this story</h3>
@@ -286,17 +248,21 @@ const Stories = (props) => {
                                                         </form>
                                                     </div>
                                                 </div>
-                                                    
-                                                    
                                             </div>
                                         </div>
                                     )
-                                }
-                                )
+                                })
                             }
-                    </Masonry>
+                        </Masonry>
                     </div>
                     {addStoryForm}
+                    <div className='contact'>
+                            <h3 className='contact-title'>Contact Us:</h3>
+                            <p className='contact-body'>2770 Arapahoe Rd, Ste 132, Lafayette, CO 80026</p>
+                            <p className='contact-body'>thereafterfostercare@gmail.com</p>
+                            <p className='contact-body'>703-629-8469</p>
+                            <p className='contact-body'><a href='https://m.facebook.com/groups/565566044060182'>Join us on Facebook</a></p>
+                        </div>
                 </div>
             </div>
         </>

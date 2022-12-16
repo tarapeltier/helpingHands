@@ -1,17 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Master.css';
+import axios from 'axios';
+import '../App.css';
 
 const Admin = () => {
-    const truePass="mySecretPage"
     const [passIn,setPassIn] = useState("");
     const [errors, setErrors] = useState("");
+
+    let truePass;
+    axios.get('http://localhost:8000/api/admin')
+        .then(res=>{truePass = res.data;})
+        
+    
     let navigate = useNavigate();
     const checkPassword = (e) =>{
-        
         e.preventDefault();
         if (passIn === truePass){
-            navigate('/', { state : {admin: true}})}
+            navigate('/', { state : {admin: true}});
+        }
         else {
                 setErrors('incorrect password');
             }
