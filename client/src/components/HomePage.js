@@ -81,6 +81,13 @@ const HomePage = (props) => {
                         <p className='mission-body main-text'>Helping Hands - There After Foster Care works with local social workers to meet the needs of young adults who are
                         aging out of foster care. While some of their needs are met through social service programs, they face challenges that youth with supportive parents do not. We step in to fill the gaps, supporting youth in their move toward independence. </p>
                     </div>
+                    <div className='contact'>
+                            <h3 className='contact-title'>Contact Us:</h3>
+                            <p className='contact-body'>2770 Arapahoe Rd, Ste 132, Lafayette, CO 80026</p>
+                            <p className='contact-body'>thereafterfostercare@gmail.com</p>
+                            <p className='contact-body'>703-629-8469</p>
+                            <p className='contact-body'><a href='https://m.facebook.com/groups/565566044060182'>Join us on Facebook</a></p>
+                        </div>
                 </div>
             </div>
         </>

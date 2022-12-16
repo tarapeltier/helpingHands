@@ -63,7 +63,7 @@ const BoardMembers = (props) => {
                     </div>
                 </div>
                 <div className="card board-card">
-                    <img className="card-img-top board-image rounded-circle" src="Jacob.jpeg" alt="Card cap8"/>
+                    <img className="card-img-top board-image rounded-circle" src="Jacob.JPG" alt="Card cap8"/>
                     <div className="card-body">
                         <h5 className="card-title board-card-title">Jacob Boswell</h5>
                         <h5 className="card-subtitle board-card-subtitle">Board Member</h5>

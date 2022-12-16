@@ -29,7 +29,7 @@ const AboutUs = () => {
                 <div className='content-local'>
                     <div className='about-wrapper'>
                         <div className='story-wrap'>
-                            <p className='story-body main-text'>Helping Hands - There After Foster Care is a charitable organization dedicated to helping young 
+                            <p className='story-body main-text'>Helping Hands - There After Foster Care is an all-volunteer charitable organization dedicated to helping young 
                                 adults who are aging out of foster care. Working with local social workers in Boulder County, 
                                 CO we help provide for the unmet needs of these young adults by providing support and emergency funding for education, 
                                 housing, medical aids, and other essential items. </p>
@@ -42,13 +42,15 @@ const AboutUs = () => {
                             <p></p>
                         </div>
                         <div className='board'>
-                            <h3 className='board-title'>Board Members:</h3>
+                            <h3 className='board-title'>Volunteer Board Members:</h3>
                             <BoardMembers/>
                         </div>
                         <div className='contact'>
                             <h3 className='contact-title'>Contact Us:</h3>
+                            <p className='contact-body'>2770 Arapahoe Rd, Ste 132, Lafayette, CO 80026</p>
                             <p className='contact-body'>thereafterfostercare@gmail.com</p>
                             <p className='contact-body'>703-629-8469</p>
+                            <p className='contact-body'><a href='https://m.facebook.com/groups/565566044060182'>Join us on Facebook</a></p>
                         </div>
                     </div>
                 </div>
