@@ -38,15 +38,40 @@ app.get('/api/admin', (req, res) => {
 
 //handle payment through stripe
 app.post("/api/payment", cors(), async (req, res) => {
-	let { amount, id, description, receipt_email } = req.body;
+	let { amount, id, description, receipt_email, name } = req.body;
+	
+	let customerID;
+
+	//search for customer by email
 	try {
-		const payment = await stripe.paymentIntents.create({
+		const existingCustomer = await stripe.customers.search({
+			query: `email:"${receipt_email}"`,
+		});
+		if (existingCustomer.data.length > 0 && "id" in existingCustomer.data[0]){
+			customerID = existingCustomer.data[0].id;
+		}
+		else{
+			//create customer
+			const customerCreate = await stripe.customers.create({
+				name: name,
+				email: receipt_email
+			});
+			customerID = customerCreate.id;
+		}
+	} catch (error) {
+		console.log("customer check error",error)
+	}
+	
+	//pay with customer id
+	try {
+		const customer = await stripe.paymentIntents.create({
 			amount,
 			currency: "USD",
 			description,
 			payment_method: id,
 			confirm: true,
-			receipt_email
+			receipt_email,
+			customer: customerID
 		})
 		res.json({
 			message: "Payment successful",
