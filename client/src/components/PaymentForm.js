@@ -28,6 +28,7 @@ export default function PaymentForm() {
     const [amount, setAmount ] = useState(0);
     const [description, setDescription] = useState("");
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
     const stripe = useStripe();
     const elements = useElements();
 
@@ -40,43 +41,44 @@ export default function PaymentForm() {
         })
 
 
-    if(!error) {
-        try {
-            const {id} = paymentMethod;
-            let formattedAmount;
-            if (amount.charAt(0) === "$"){
-                if (amount.includes('.')){
-                    formattedAmount = amount.substring(1).replace('.','');
+        if(!error) {
+            try {
+                const {id} = paymentMethod;
+                let formattedAmount;
+                if (amount.charAt(0) === "$"){
+                    if (amount.includes('.')){
+                        formattedAmount = amount.substring(1).replace('.','');
+                    }
+                    else{
+                        formattedAmount = amount.substring(1) + '00';
+                    }
                 }
                 else{
-                    formattedAmount = amount.substring(1) + '00';
+                    if (amount.includes('.')){
+                        formattedAmount = amount.replace('.','');
+                    }
+                    else{
+                        formattedAmount = amount +'00';
+                    }
+                    
                 }
-            }
-            else{
-                if (amount.includes('.')){
-                    formattedAmount = amount.replace('.','');
+                const response = await axios.post("http://localhost:8000/api/payment", {
+                    amount: formattedAmount,
+                    id,
+                    description,
+                    receipt_email:email,
+                    name
+                })
+                if(response.data.success) {
+                    setSuccess(true);
                 }
-                else{
-                    formattedAmount = amount +'00';
-                }
-                
+            } catch (payError) {
+                console.log("Error", payError)
             }
-            const response = await axios.post("http://localhost:8000/api/payment", {
-                amount: formattedAmount,
-                id,
-                description,
-                receipt_email:email,
-            })
-            if(response.data.success) {
-                setSuccess(true);
-            }
-        } catch (payError) {
-            console.log("Error", payError)
+        } else {
+            console.log(error.message)
         }
-    } else {
-        console.log(error.message)
     }
-}
 
     return (
         <>
@@ -91,6 +93,10 @@ export default function PaymentForm() {
                     <div className="inp-dynamic">
                         <div className="inp-wrap">
                             <div className="inp-flex">
+                                <label>Name:</label>
+                                <input type='text' id="name" onChange={e=>setName(e.target.value)} className="don-input"></input>
+                            </div>
+                            <div className="inp-flex">
                                 <label>Amount:</label>
                                 <input type='text' id="amount" onChange={e=>setAmount(e.target.value)} defaultValue='$0' className="don-input"></input>
                             </div>
@@ -98,6 +104,7 @@ export default function PaymentForm() {
                                 <label>Email:</label>
                                 <input type='text' id="email" onChange={e=>setEmail(e.target.value)} className="don-input"></input>
                             </div>
+                            
                         </div>
                         <div className="don-area">
                             <div className="area-flex">
