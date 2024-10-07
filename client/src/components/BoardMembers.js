@@ -28,9 +28,9 @@ const BoardMembers = (props) => {
                     </div>
                 </div>
                 <div className="card board-card">
-                    <img className="card-img-top board-image rounded-circle" src="Olivia.jpeg" alt="Card cap6"/>
+                    <img className="card-img-top board-image rounded-circle" src="JordanOrtiz.jpg" alt="Card cap6"/>
                     <div className="card-body">
-                        <h5 className="card-title board-card-title">Olivia Bartholomew</h5>
+                        <h5 className="card-title board-card-title">Jordan Ortiz</h5>
                         <h5 className="card-subtitle board-card-subtitle">Treasurer</h5>
                     </div>
                 </div>
