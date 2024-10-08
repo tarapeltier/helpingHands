@@ -8,7 +8,7 @@ const BoardMembers = (props) => {
     return (
         <>
             <Masonry
-                breakpointCols={{default: 4,
+                breakpointCols={{default: 3,
                                 1000: 3,
                                 700: 2}}
                 className="my-masonry-grid"
@@ -16,7 +16,7 @@ const BoardMembers = (props) => {
                 <div className="card board-card">
                     <img className="card-img-top board-image rounded-circle" src="beverly_headshot2.jpg" alt="Card cap1"/>
                     <div className="card-body">
-                        <h5 className="card-title board-card-title">Beverly Haller</h5>
+                        <h5 className="card-title board-card-title">Beverly McKelvey</h5>
                         <h5 className="card-subtitle board-card-subtitle">President</h5>
                     </div>
                 </div>
@@ -35,13 +35,6 @@ const BoardMembers = (props) => {
                     </div>
                 </div>
                 <div className="card board-card">
-                    <img className="card-img-top board-image rounded-circle" src="Sue.jpg" alt="Card cap3"/>
-                    <div className="card-body">
-                        <h5 className="card-title board-card-title">Sue Ewig</h5>
-                        <h5 className="card-subtitle board-card-subtitle">Board Member</h5>
-                    </div>
-                </div>
-                <div className="card board-card">
                     <img className="card-img-top board-image rounded-circle" src="Tam.jpg" alt="Card cap5"/>
                     <div className="card-body">
                         <h5 className="card-title board-card-title">Tam Dalle Molle</h5>
@@ -49,23 +42,9 @@ const BoardMembers = (props) => {
                     </div>
                 </div>
                 <div className="card board-card">
-                    <img className="card-img-top board-image rounded-circle" src="Chrystal.png" alt="Card cap7"/>
-                    <div className="card-body">
-                        <h5 className="card-title board-card-title">Chrystal Terhune</h5>
-                        <h5 className="card-subtitle board-card-subtitle">Board Member</h5>
-                    </div>
-                </div>
-                <div className="card board-card">
                     <img className="card-img-top board-image rounded-circle" src="sharon_headshot3.jpg" alt="Card cap2"/>
                     <div className="card-body">
                         <h5 className="card-title board-card-title">Sharon Ladin</h5>
-                        <h5 className="card-subtitle board-card-subtitle">Board Member</h5>
-                    </div>
-                </div>
-                <div className="card board-card">
-                    <img className="card-img-top board-image rounded-circle" src="Jacob.JPG" alt="Card cap8"/>
-                    <div className="card-body">
-                        <h5 className="card-title board-card-title">Jacob Boswell</h5>
                         <h5 className="card-subtitle board-card-subtitle">Board Member</h5>
                     </div>
                 </div>
