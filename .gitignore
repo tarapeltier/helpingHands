@@ -5,3 +5,6 @@ build/
 .env
 .tar
 .tar.gz
+.save
+.backup
+
